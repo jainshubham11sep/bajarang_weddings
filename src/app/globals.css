@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --gold: #C9A84C;
-  --gold-light: #E8D08A;
-  --gold-dark: #A07830;
-  --cream: #FAF6EF;
-  --ivory: #F5F0E8;
-  --charcoal: #1A1A1A;
-  --charcoal-light: #2D2D2D;
-  --text-muted: #6B5E4E;
+  /* Terracotta theme — extracted from Bajranng Weddings logo */
+  --brand: #B5422A;
+  --brand-light: #D4694A;
+  --brand-dark: #8B2D18;
+  --brand-pale: #F2E0D9;
+  --cream: #F5F0EC;
+  --ivory: #EDE6E0;
+  --charcoal: #1C1512;
+  --charcoal-light: #2E1F18;
+  --text-muted: #6B5347;
+
+  /* Keep --gold pointing to brand for zero-refactor of existing components */
+  --gold: var(--brand);
+  --gold-light: var(--brand-light);
+  --gold-dark: var(--brand-dark);
 }
 
 @theme inline {
@@ -33,12 +40,12 @@ body {
 .section-divider {
   width: 80px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
   margin: 1rem auto;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
   color: white;
   padding: 0.75rem 2rem;
   border: none;
@@ -53,16 +60,16 @@ body {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.4);
+  box-shadow: 0 4px 15px rgba(181, 66, 42, 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--gold);
+  color: var(--brand);
   padding: 0.75rem 2rem;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--brand);
   cursor: pointer;
   font-family: 'Georgia', serif;
   letter-spacing: 0.1em;
@@ -74,7 +81,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: var(--gold);
+  background: var(--brand);
   color: white;
 }
 
@@ -96,7 +103,7 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--gold);
+  background: var(--brand);
   transition: width 0.3s ease;
 }
 
@@ -105,7 +112,7 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--gold);
+  color: var(--brand);
 }
 
 .page-hero {
@@ -118,7 +125,7 @@ body {
 .page-hero h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-family: 'Georgia', serif;
-  color: var(--gold-light);
+  color: var(--brand-pale);
   margin-bottom: 1rem;
   font-style: italic;
 }
@@ -202,6 +209,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.service-card {
+  border-left: 3px solid var(--ivory);
+  transition: border-color 0.3s;
+}
+
+.service-card:hover {
+  border-left-color: var(--brand);
+}
+
+.venue-card-dark {
+  border: 1px solid rgba(181, 66, 42, 0.3);
+  background: rgba(255,255,255,0.04);
+  transition: border-color 0.3s;
+}
+
+.venue-card-dark:hover {
+  border-color: var(--brand);
+}
+
+.album-card-bottom {
+  border-bottom: 3px solid var(--ivory);
+  transition: border-color 0.3s;
+}
+
+.album-card-bottom:hover {
+  border-bottom-color: var(--brand);
 }
 
 @media (max-width: 768px) {
