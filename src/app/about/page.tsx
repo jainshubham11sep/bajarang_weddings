@@ -46,10 +46,17 @@ export default function AboutPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Our Journey</p>
+        <p className="label mb-4" style={{ color: 'rgba(181,66,42,0.8)' }}>Our Journey</p>
         <h1>About Bajranng Weddings</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Crafting unforgettable celebrations since 2009 — born in Rajasthan, trusted across India</p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', margin: '1.25rem auto' }}>
+          <div style={{ width: '40px', height: '1px', background: 'rgba(181,66,42,0.5)' }} />
+          <div style={{ width: '5px', height: '5px', background: 'var(--brand)', borderRadius: '50%' }} />
+          <div style={{ width: '40px', height: '1px', background: 'rgba(181,66,42,0.5)' }} />
+        </div>
+        <p>Designing Grand Weddings for 35+ Years — born in Rajasthan, trusted across India</p>
+        <p style={{ fontFamily: 'var(--body-font)', fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(181,66,42,0.6)', marginTop: '1rem' }}>
+          Wedding Planners &nbsp;&middot;&nbsp; Luxury Decor &nbsp;&middot;&nbsp; Destination Weddings &nbsp;&middot;&nbsp; Global Celebrations
+        </p>
       </div>
 
       {/* Our Story */}
