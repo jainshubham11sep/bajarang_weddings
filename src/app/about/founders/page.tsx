@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import InstagramEmbed from './InstagramEmbed';
 
 export const metadata: Metadata = {
   title: "Founder's Note | Bajranng Weddings",
@@ -21,27 +20,24 @@ export default function FoundersPage() {
         <p>Three decades of passion, perfection, and the art of extraordinary celebrations</p>
       </div>
 
-      {/* Instagram Post Feature */}
+      {/* Instagram CTA */}
       <section className="py-16 px-4" style={{ background: 'var(--ivory)' }}>
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
-            Featured on Instagram
-          </p>
-          <h2 className="section-title mb-2">The Legacy Behind Bajranng Weddings</h2>
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Follow Our Journey</p>
+          <h2 className="section-title mb-2">See Our Work on Instagram</h2>
           <div className="section-divider mb-8" />
-          <InstagramEmbed postUrl="https://www.instagram.com/p/DaApSZ0Tjrr/" />
-          <p className="mt-4 text-xs" style={{ color: 'var(--text-muted)' }}>
-            Follow us on{' '}
-            <a
-              href="https://www.instagram.com/bajranngweddings"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-              style={{ color: 'var(--gold)' }}
-            >
-              @bajranngweddings
-            </a>
+          <p className="mb-8 leading-relaxed" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+            From behind-the-scenes moments to breathtaking wedding highlights — follow us for a glimpse into the world of Bajranng Weddings.
           </p>
+          <a
+            href="https://www.instagram.com/bajranngweddings"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ display: 'inline-block' }}
+          >
+            @bajranngweddings
+          </a>
         </div>
       </section>
 

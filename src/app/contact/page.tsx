@@ -8,8 +8,8 @@ const offices = [
     city: 'Head Office — Kota',
     address: '414, near Hadoti Hospital, Special, Rajiv Gandhi Nagar, Kota, Rajasthan 324005',
     phone: '+91 98290 37466',
-    phone2: '+91 82248 94743',
-    email: 'info@bajranngweddings.com',
+    phone2: '+91 96365 48645',
+    email: 'eventsbajranng@gmail.com',
   },
 ];
 
@@ -183,7 +183,7 @@ export default function ContactPage() {
                 <div className="text-2xl mb-2">📞</div>
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--brand)' }}>Call Us</div>
                 <div className="text-xs font-medium" style={{ color: 'var(--charcoal)' }}>+91 98290 37466</div>
-                <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>+91 82248 94743</div>
+                <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>+91 96365 48645</div>
               </a>
               <a href="https://wa.me/919829037466"
                 target="_blank" rel="noopener noreferrer"
@@ -192,11 +192,11 @@ export default function ContactPage() {
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: '#25D366' }}>WhatsApp</div>
                 <div className="text-xs" style={{ color: 'var(--charcoal)' }}>Chat with us now</div>
               </a>
-              <a href="mailto:info@bajranngweddings.com"
+              <a href="mailto:eventsbajranng@gmail.com"
                 className="bg-white p-5 text-center card-hover block no-underline">
                 <div className="text-2xl mb-2">✉️</div>
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--brand)' }}>Email</div>
-                <div className="text-xs" style={{ color: 'var(--charcoal)' }}>info@bajranngweddings.com</div>
+                <div className="text-xs" style={{ color: 'var(--charcoal)' }}>eventsbajranng@gmail.com</div>
               </a>
               <div className="bg-white p-5 text-center card-hover">
                 <div className="text-2xl mb-2">📅</div>
@@ -252,12 +252,15 @@ export default function ContactPage() {
               </h3>
               <div className="flex gap-3">
                 {[
-                  { name: 'Instagram', icon: '📸' },
-                  { name: 'Facebook', icon: '👍' },
-                  { name: 'YouTube', icon: '▶️' },
-                  { name: 'Pinterest', icon: '📌' },
+                  { name: 'Instagram', icon: '📸', href: 'https://www.instagram.com/bajranngweddings' },
+                  { name: 'Facebook', icon: '👍', href: '#' },
+                  { name: 'YouTube', icon: '▶️', href: '#' },
+                  { name: 'Pinterest', icon: '📌', href: '#' },
                 ].map((s) => (
-                  <a key={s.name} href="#" title={s.name}
+                  <a key={s.name} href={s.href}
+                    target={s.href !== '#' ? '_blank' : undefined}
+                    rel="noopener noreferrer"
+                    title={s.name}
                     className="w-12 h-12 bg-white flex items-center justify-center card-hover text-sm border"
                     style={{ borderColor: 'var(--ivory)' }}>
                     {s.icon}

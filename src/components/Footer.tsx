@@ -149,14 +149,14 @@ export default function Footer() {
               </p>
               <p>
                 📞{' '}
-                <a href="tel:+918224894743" className="transition-colors hover:text-white">
-                  +91 82248 94743
+                <a href="tel:+919636548645" className="transition-colors hover:text-white">
+                  +91 96365 48645
                 </a>
               </p>
               <p>
                 ✉️{' '}
-                <a href="mailto:info@bajranngweddings.com" className="transition-colors hover:text-white">
-                  info@bajranngweddings.com
+                <a href="mailto:eventsbajranng@gmail.com" className="transition-colors hover:text-white">
+                  eventsbajranng@gmail.com
                 </a>
               </p>
               <div className="pt-3">

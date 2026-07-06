@@ -20,7 +20,7 @@ const services = [
 const albums = [
   { title: 'Royal Weddings', subtitle: 'Palace & Fort Ceremonies', href: '/albums/royal-weddings', img: '/images/gallery/IMG_1938.jpeg' },
   { title: 'Destination Weddings', subtitle: 'Across Rajasthan & Beyond', href: '/albums/destination-weddings', img: '/images/gallery/IMG_1937.jpeg' },
-  { title: 'Luxury Mandap Designs', subtitle: 'Sacred Spaces Reimagined', href: '/albums/luxury-mandap', img: '/images/gallery/IMG_1930.jpeg' },
+  { title: 'Luxury Mandap Designs', subtitle: 'Sacred Spaces Reimagined', href: '/albums/luxury-mandap', img: '/images/gallery/IMG_2021.jpeg' },
   { title: 'Haldi Decor', subtitle: 'Colour & Ceremony', href: '/albums/haldi-decor', img: '/images/gallery/IMG_1935.jpeg' },
   { title: 'Mehendi Decor', subtitle: 'Intimate Traditions', href: '/albums/mehendi-decor', img: '/images/gallery/IMG_2008.jpeg' },
   { title: 'Reception Decor', subtitle: 'Grand Celebrations', href: '/albums/reception-decor', img: '/images/gallery/IMG_1986.jpeg' },
@@ -197,7 +197,7 @@ export default function HomePage() {
           </div>
 
           {/* Real photo */}
-          <div style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden' }}>
             <Image
               src="/images/gallery/IMG_2021.jpeg"
               alt="Bajranng Weddings — Luxury Mandap Design"
