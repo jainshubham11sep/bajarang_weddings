@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -6,10 +7,20 @@ export const metadata: Metadata = {
   description: 'Explore our royal wedding photography — palace ceremonies, baraat processions, and regal décor from Rajasthan\'s heritage properties.',
 };
 
-const placeholders = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  label: `Royal Wedding ${i + 1}`,
-}));
+const photos = [
+  '/images/gallery/IMG_1938.jpeg',
+  '/images/gallery/IMG_1937.jpeg',
+  '/images/gallery/IMG_1936.jpeg',
+  '/images/gallery/IMG_1939.jpeg',
+  '/images/gallery/IMG_1972.jpeg',
+  '/images/gallery/IMG_1973.jpeg',
+  '/images/gallery/IMG_1974.jpeg',
+  '/images/gallery/IMG_1932.jpeg',
+  '/images/gallery/IMG_1933.jpeg',
+  '/images/gallery/IMG_1934.jpeg',
+  '/images/gallery/IMG_1935.jpeg',
+  '/images/gallery/IMG_1986.jpeg',
+];
 
 export default function RoyalWeddingsPage() {
   return (
@@ -26,15 +37,15 @@ export default function RoyalWeddingsPage() {
       <section className="py-16 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <div className="gallery-grid">
-            {placeholders.map((p) => (
-              <div key={p.id} className="gallery-item card-hover group cursor-pointer">
-                <div className="w-full h-full flex items-center justify-center"
-                  style={{ background: `hsl(${20 + p.id * 8}, 30%, ${15 + p.id * 2}%)` }}>
-                  <div className="text-center text-white/60">
-                    <div className="text-3xl mb-2" style={{ color: 'var(--gold)' }}>✦</div>
-                    <div className="text-xs tracking-widest uppercase">{p.label}</div>
-                  </div>
-                </div>
+            {photos.map((src, i) => (
+              <div key={i} className="gallery-item card-hover group cursor-pointer">
+                <Image
+                  src={src}
+                  alt={`Royal Wedding ${i + 1}`}
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center', transition: 'transform 0.6s ease' }}
+                  className="group-hover:scale-105"
+                />
                 <div className="gallery-overlay">
                   <span className="text-white text-xs tracking-widest uppercase" style={{ color: 'var(--gold-light)' }}>View Photo</span>
                 </div>

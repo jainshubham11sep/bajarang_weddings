@@ -2,106 +2,116 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Team | Bajranng Weddings',
-  description: 'Meet the passionate people behind Bajranng Weddings — founders, designers, planners, and the dedicated execution team.',
+  title: 'Our Founders | Bajranng Weddings',
+  description: 'Meet Manmohan Agrawal and Ashutosh Agrawal — the visionaries behind Bajranng Weddings, India\'s premier luxury wedding planning company.',
 };
-
-const departments = [
-  {
-    name: 'Founders',
-    desc: 'The visionaries who built Bajranng Weddings from a dream into India\'s most trusted luxury wedding company.',
-    members: [
-      { name: 'Rajiv Sharma', role: 'Co-Founder & Creative Director', bio: '20+ years in luxury event design. Rajiv\'s vision shapes every wedding\'s aesthetic identity.' },
-      { name: 'Priya Sharma', role: 'Co-Founder & Head of Planning', bio: 'A logistics genius and client advocate, Priya ensures every wedding is flawlessly coordinated.' },
-    ],
-  },
-  {
-    name: 'Wedding Designers',
-    desc: 'Our award-winning design team brings your vision to life with creativity, craftsmanship, and an eye for the extraordinary.',
-    members: [
-      { name: 'Anika Gupta', role: 'Lead Floral Designer', bio: 'Trained in Paris and Mumbai, Anika creates floral installations that take your breath away.' },
-      { name: 'Rohan Mehra', role: 'Mandap Architecture Lead', bio: 'Rohan\'s mandap designs have been featured in Vogue India and Harper\'s Bazaar Bride.' },
-      { name: 'Nisha Kapoor', role: 'Lighting & Ambiance Designer', bio: 'Nisha transforms spaces with light — turning ordinary venues into magical dreamscapes.' },
-    ],
-  },
-  {
-    name: 'Planning Team',
-    desc: 'Meticulous planners who ensure every detail — from the guest list to the ceremony timing — is perfect.',
-    members: [
-      { name: 'Vikram Singh', role: 'Senior Wedding Planner', bio: 'With 150+ weddings executed, Vikram is the calm in any storm and a master of logistics.' },
-      { name: 'Divya Joshi', role: 'Client Relations Manager', bio: 'Divya is your dedicated point of contact throughout the entire planning journey.' },
-    ],
-  },
-  {
-    name: 'Production Team',
-    desc: 'The builders and craftsmen who construct the physical magic — every arch, stage, and installation.',
-    members: [
-      { name: 'Suresh Verma', role: 'Production Manager', bio: 'Suresh leads our 50-member production crew with 18 years of hands-on execution experience.' },
-      { name: 'Amit Pandey', role: 'Technical Director', bio: 'AV systems, stage engineering, and structural builds — Amit ensures safety and spectacle.' },
-    ],
-  },
-  {
-    name: 'Hospitality Team',
-    desc: 'The warm faces who ensure your guests feel welcomed, cared for, and delighted at every turn.',
-    members: [
-      { name: 'Meera Agarwal', role: 'Head of Guest Experience', bio: 'Meera\'s hospitality philosophy: every guest should feel like the guest of honour.' },
-    ],
-  },
-  {
-    name: 'Execution Team',
-    desc: 'On-ground coordinators stationed at every corner of your venue on the wedding day.',
-    members: [
-      { name: 'Karan Malhotra', role: 'Lead Day-of Coordinator', bio: 'Karan\'s on-ground presence means nothing slips through the cracks — ever.' },
-      { name: 'Sneha Rao', role: 'Ceremony Coordinator', bio: 'Sneha ensures every ritual flows with grace, precision, and emotional authenticity.' },
-    ],
-  },
-];
 
 export default function TeamPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>The People Behind the Magic</p>
-        <h1>Our Team</h1>
+        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>The Visionaries</p>
+        <h1>Our Founders</h1>
         <div className="section-divider mt-4 mb-4" />
-        <p>200+ passionate professionals dedicated to making your wedding extraordinary</p>
+        <p>35+ years of crafting India&apos;s most extraordinary weddings</p>
       </div>
 
-      {departments.map((dept, idx) => (
-        <section key={dept.name} className="py-16 px-4"
-          style={{ background: idx % 2 === 0 ? 'var(--cream)' : 'var(--ivory)' }}>
-          <div className="max-w-6xl mx-auto">
-            <p className="text-xs tracking-[0.3em] uppercase mb-2 text-center" style={{ color: 'var(--gold)' }}>
-              {dept.name}
-            </p>
-            <h2 className="section-title mb-2">{dept.name}</h2>
-            <div className="section-divider mb-4" />
-            <p className="section-subtitle">{dept.desc}</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {dept.members.map((m) => (
-                <div key={m.name} className="bg-white p-7 card-hover" style={{ borderTop: '3px solid var(--gold)' }}>
-                  <div className="w-16 h-16 rounded-full mb-4 flex items-center justify-center text-white text-xl font-bold"
-                    style={{ background: 'linear-gradient(135deg, var(--gold-dark), var(--gold))' }}>
-                    {m.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div className="font-semibold text-base mb-1" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{m.name}</div>
-                  <div className="text-xs tracking-widest uppercase mb-3" style={{ color: 'var(--gold)' }}>{m.role}</div>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{m.bio}</p>
-                </div>
-              ))}
+      {/* Manmohan Agrawal */}
+      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+          <div className="flex flex-col items-center md:items-start">
+            <div className="w-40 h-40 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-6"
+              style={{ background: 'linear-gradient(135deg, var(--brand-dark), var(--brand))' }}>
+              MA
             </div>
+            <p className="text-xs tracking-[0.3em] uppercase mb-2 text-center md:text-left" style={{ color: 'var(--brand)' }}>Founder & Chairman</p>
+            <h2 style={{ fontFamily: 'var(--display-font)', fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 400, color: 'var(--charcoal)', lineHeight: 1.2, marginBottom: '1rem', textAlign: 'left' }}>
+              Manmohan Agrawal
+            </h2>
+            <div style={{ width: '48px', height: '2px', background: 'var(--brand)', marginBottom: '1.5rem' }} />
           </div>
-        </section>
-      ))}
+          <div>
+            <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+              Manmohan Agrawal founded Bajranng Weddings in 1991 in Kota, Rajasthan, with a singular belief: that every Indian
+              wedding deserves to be a celebration of royal magnificence. What began as one man&apos;s passionate vision has
+              grown into one of India&apos;s most respected luxury wedding companies.
+            </p>
+            <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+              Drawing deeply from Rajasthan&apos;s rich royal heritage — its majestic palaces, vibrant culture, and traditions of
+              grand hospitality — he built a company that doesn&apos;t just plan weddings but crafts immersive experiences that
+              families treasure for generations.
+            </p>
+            <blockquote style={{
+              borderLeft: '3px solid var(--brand)',
+              paddingLeft: '1.25rem',
+              fontFamily: 'var(--display-font)',
+              fontStyle: 'italic',
+              fontSize: '1.1rem',
+              color: 'var(--charcoal)',
+              lineHeight: 1.6,
+              margin: '1.5rem 0',
+            }}>
+              &ldquo;Every wedding is a once-in-a-lifetime moment. We treat it with that gravity — and that joy.&rdquo;
+            </blockquote>
+          </div>
+        </div>
+      </section>
 
+      {/* Ashutosh Agrawal */}
+      <section className="py-20 px-4" style={{ background: 'var(--ivory)' }}>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+          <div className="order-2 md:order-1">
+            <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+              Ashutosh Agrawal carries the Bajranng legacy into a new era. With deep expertise in contemporary luxury design
+              and destination wedding logistics, he has expanded the company&apos;s reach across India and internationally —
+              bringing Rajasthan&apos;s royal wedding tradition to NRI and global couples.
+            </p>
+            <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+              Ashutosh oversees the creative direction and production teams, ensuring that every wedding executed under the
+              Bajranng name reflects the same unwavering standard of excellence and beauty that has defined the company
+              for over three decades.
+            </p>
+            <blockquote style={{
+              borderLeft: '3px solid var(--brand)',
+              paddingLeft: '1.25rem',
+              fontFamily: 'var(--display-font)',
+              fontStyle: 'italic',
+              fontSize: '1.1rem',
+              color: 'var(--charcoal)',
+              lineHeight: 1.6,
+              margin: '1.5rem 0',
+            }}>
+              &ldquo;We inherit 35 years of trust. Our job is to honour it — and raise the bar every single time.&rdquo;
+            </blockquote>
+          </div>
+          <div className="flex flex-col items-center md:items-end order-1 md:order-2">
+            <div className="w-40 h-40 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-6"
+              style={{ background: 'linear-gradient(135deg, var(--brand-dark), var(--brand))' }}>
+              AA
+            </div>
+            <p className="text-xs tracking-[0.3em] uppercase mb-2 text-center md:text-right" style={{ color: 'var(--brand)' }}>Director & Creative Head</p>
+            <h2 style={{ fontFamily: 'var(--display-font)', fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 400, color: 'var(--charcoal)', lineHeight: 1.2, marginBottom: '1rem', textAlign: 'right' }}>
+              Ashutosh Agrawal
+            </h2>
+            <div style={{ width: '48px', height: '2px', background: 'var(--brand)', marginBottom: '1.5rem', alignSelf: 'flex-end' }} />
+          </div>
+        </div>
+      </section>
+
+      {/* In-house team mention */}
       <section className="py-16 px-4 text-center" style={{ background: 'var(--charcoal)' }}>
-        <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--gold-light)' }}>
-          Join the Bajranng Family
-        </h2>
-        <p className="mb-6" style={{ color: 'rgba(255,255,255,0.65)' }}>
-          We are always looking for passionate, talented individuals to join our growing team.
-        </p>
-        <Link href="/contact" className="btn-primary">Contact Us</Link>
+        <div className="max-w-2xl mx-auto">
+          <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: 'var(--brand-light)' }}>Behind Every Wedding</p>
+          <h2 style={{ fontFamily: 'var(--display-font)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', fontWeight: 300, fontStyle: 'italic', color: 'rgba(253,250,247,0.92)', lineHeight: 1.3, marginBottom: '1rem' }}>
+            200+ In-house Professionals
+          </h2>
+          <div style={{ width: '48px', height: '1px', background: 'var(--brand)', margin: '1rem auto 1.5rem' }} />
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+            Behind our founders is a 200+ member team of designers, artisans, planners, and production specialists — all
+            in-house, all passionate, all dedicated to making your wedding extraordinary.
+          </p>
+          <Link href="/contact" className="btn-primary">Plan My Wedding</Link>
+        </div>
       </section>
     </>
   );

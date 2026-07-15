@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const stats = [
-  { number: '500+', label: 'Weddings Executed' },
+  { number: '2000+', label: 'Weddings Executed' },
   { number: '35+', label: 'Years of Excellence' },
   { number: '6', label: 'Royal Destinations' },
   { number: '100%', label: 'In-House Production' },
@@ -70,16 +70,16 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-[900px] mx-auto px-6 py-24">
           {/* Brand label */}
-          <p className="label mb-3" style={{ color: 'rgba(181,66,42,0.9)', letterSpacing: '0.3em' }}>
+          <p className="label mb-3" style={{ color: 'var(--brand-light)', letterSpacing: '0.35em', fontSize: '0.75rem' }}>
             Bajranng Weddings
           </p>
           {/* Tagline strip */}
           <p style={{
             fontFamily: 'var(--body-font)',
-            fontSize: '0.65rem',
-            letterSpacing: '0.18em',
+            fontSize: '0.72rem',
+            letterSpacing: '0.15em',
             textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.45)',
+            color: 'rgba(255,255,255,0.72)',
             marginBottom: '2.5rem',
           }}>
             Designing Grand Weddings for 35+ Years &nbsp;&middot;&nbsp; Wedding Planners &nbsp;&middot;&nbsp; Luxury Decor &nbsp;&middot;&nbsp; Destination Weddings &nbsp;&middot;&nbsp; Global Celebrations
@@ -174,17 +174,7 @@ export default function HomePage() {
             }}>
               Designing Grand Weddings<br />for 35+ Years
             </h2>
-            <div className="hr-brand" style={{ maxWidth: '60px', marginBottom: '1.5rem' }} />
-            <p style={{
-              fontFamily: 'var(--body-font)',
-              fontSize: '0.72rem',
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: 'var(--brand)',
-              marginBottom: '1.75rem',
-            }}>
-              Wedding Planners &nbsp;&middot;&nbsp; Luxury Decor &nbsp;&middot;&nbsp; Destination Weddings &nbsp;&middot;&nbsp; Global Celebrations
-            </p>
+            <div className="hr-brand" style={{ maxWidth: '60px', marginBottom: '1.75rem' }} />
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.85, fontSize: '0.9rem', marginBottom: '1.25rem' }}>
               Bajranng Weddings is India&apos;s most trusted name in luxury and destination wedding planning.
               With an entirely in-house production and execution team, we deliver unparalleled quality at every touchpoint.
@@ -213,7 +203,7 @@ export default function HomePage() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'rgba(255,255,255,0.1)' }}>
                 {['Our Story', 'Why Choose Us', 'In-house Production', 'Royal Expertise'].map((item) => (
                   <div key={item} style={{ background: 'rgba(13,11,9,0.6)', padding: '1rem 1.25rem' }}>
-                    <p style={{ fontFamily: 'var(--display-font)', fontSize: '0.95rem', fontStyle: 'italic', color: 'rgba(253,250,247,0.85)' }}>{item}</p>
+                    <p style={{ fontFamily: 'var(--display-font)', fontSize: '0.95rem', fontStyle: 'normal', color: 'rgba(253,250,247,0.85)' }}>{item}</p>
                   </div>
                 ))}
               </div>
@@ -295,9 +285,8 @@ export default function HomePage() {
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,11,9,0.85) 0%, rgba(13,11,9,0.2) 60%, transparent 100%)' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '1.5rem' }}>
-                  <p style={{ fontFamily: 'var(--body-font)', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(181,66,42,0.8)', marginBottom: '0.35rem' }}>Gallery</p>
-                  <p style={{ fontFamily: 'var(--display-font)', fontSize: '1.1rem', fontStyle: 'italic', fontWeight: 300, color: 'rgba(253,250,247,0.9)', lineHeight: 1.2 }}>{a.title}</p>
-                  <p style={{ fontFamily: 'var(--body-font)', fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: '0.2rem' }}>{a.subtitle}</p>
+                  <p style={{ fontFamily: 'var(--display-font)', fontSize: '1.15rem', fontStyle: 'italic', fontWeight: 600, color: 'rgba(253,250,247,0.95)', lineHeight: 1.2 }}>{a.title}</p>
+                  <p style={{ fontFamily: 'var(--body-font)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(181,66,42,0.85)', marginTop: '0.3rem' }}>{a.subtitle}</p>
                 </div>
               </Link>
             ))}

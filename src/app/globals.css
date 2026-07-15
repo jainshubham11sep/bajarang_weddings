@@ -22,8 +22,8 @@
   --gold-light: var(--brand-light);
   --gold-dark: var(--brand-dark);
 
-  /* Typography — Bodoni Moda (display) + Raleway (body) */
-  --display-font: var(--font-display), 'Bodoni Moda', Georgia, serif;
+  /* Typography — Playfair Display (display) + Raleway (body) */
+  --display-font: var(--font-display), 'Playfair Display', Georgia, serif;
   --body-font: var(--font-body), Raleway, 'Helvetica Neue', sans-serif;
 }
 

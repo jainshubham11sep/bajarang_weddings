@@ -39,7 +39,7 @@ const milestones = [
   { year: '2003', event: 'Crossed 100-wedding milestone; launched dedicated in-house decor & production division' },
   { year: '2010', event: 'Pan-Rajasthan presence across 6 destinations; first international destination wedding' },
   { year: '2017', event: 'Global celebrations launched for NRI & international couples; reach extended worldwide' },
-  { year: '2024', event: '500+ weddings, 200+ team members, and 35 years of creating timeless memories — still counting' },
+  { year: '2024', event: '2000+ weddings, 200+ team members, and 35 years of creating timeless memories — still counting' },
 ];
 
 export default function AboutPage() {
@@ -77,7 +77,7 @@ export default function AboutPage() {
               immersive experiences that families treasure for generations.
             </p>
             <p className="leading-relaxed mb-8" style={{ color: 'var(--text-muted)' }}>
-              Today, 35 years on, with over 500 weddings executed and a team of 200+ creative professionals, we remain
+              Today, 35 years on, with over 2000 weddings executed and a team of 200+ creative professionals, we remain
               as dedicated to that original vision as ever: making every wedding a timeless masterpiece.
             </p>
             <div className="flex gap-4 flex-wrap">
@@ -124,7 +124,7 @@ export default function AboutPage() {
       <section id="production" className="py-20 px-4" style={{ background: 'var(--charcoal)' }}>
         <div className="max-w-5xl mx-auto text-center text-white">
           <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: 'var(--gold)' }}>What Sets Us Apart</p>
-          <h2 className="section-title mb-2 text-white">In-house Production & Execution</h2>
+          <h2 className="section-title mb-2" style={{ color: 'white' }}>In-house Production & Execution</h2>
           <div className="section-divider mb-6" />
           <p className="leading-relaxed mb-6 max-w-3xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
             Most wedding planners are coordinators — they hire vendors and hope for the best. We are builders.

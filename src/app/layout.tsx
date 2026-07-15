@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Raleway } from "next/font/google";
+import { Playfair_Display, Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const bodoniModa = Bodoni_Moda({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bodoniModa.variable} ${raleway.variable} h-full antialiased`}>
+    <html lang="en" className={`${playfairDisplay.variable} ${raleway.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1 pt-[64px]">{children}</main>
