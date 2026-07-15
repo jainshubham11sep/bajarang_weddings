@@ -57,7 +57,7 @@ export default function AboutPage() {
       </div>
 
       {/* Our Story */}
-      <section id="our-story" className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section id="our-story" className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <Reveal direction="right">
             <div>
@@ -103,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section id="why-choose" className="py-24 px-4" style={{ background: 'var(--ivory)' }}>
+      <section id="why-choose" className="py-12 md:py-24 px-4" style={{ background: 'var(--ivory)' }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center mb-16">
@@ -126,7 +126,7 @@ export default function AboutPage() {
       </section>
 
       {/* In-house Production */}
-      <section id="production" className="py-24 px-4 relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
+      <section id="production" className="py-12 md:py-24 px-4 relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(181,66,42,0.16) 0%, transparent 70%)' }} />
         <div className="max-w-5xl mx-auto text-center text-white relative">
           <Reveal>
@@ -157,7 +157,7 @@ export default function AboutPage() {
       </section>
 
       {/* Luxury Expertise */}
-      <section id="expertise" className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section id="expertise" className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center mb-16">
@@ -188,7 +188,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
+      <section className="py-10 md:py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
         <Reveal>
           <div className="relative">

@@ -31,7 +31,7 @@ export default function DecorDesignPage() {
         </div>
       </div>
 
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-5xl mx-auto">
           <Reveal>
             <p className="leading-relaxed text-center max-w-3xl mx-auto mb-14" style={{ color: 'var(--text-muted)' }}>

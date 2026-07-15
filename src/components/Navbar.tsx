@@ -130,8 +130,8 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Bajranng Weddings"
-                width={160}
-                height={56}
+                width={690}
+                height={308}
                 className="object-contain"
                 style={{ height: scrolled ? '40px' : '48px', width: 'auto', transition: 'height 0.4s var(--ease-out)' }}
                 onError={() => setLogoError(true)}

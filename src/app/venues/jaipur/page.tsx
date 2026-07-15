@@ -33,7 +33,7 @@ export default function JaipurPage() {
         </div>
       </div>
 
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-start">
           <Reveal direction="right">
             <div>

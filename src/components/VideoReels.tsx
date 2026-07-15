@@ -115,7 +115,7 @@ export default function VideoReels() {
   };
 
   return (
-    <section style={{ background: 'var(--charcoal)', padding: '7rem 0' }} className="relative overflow-hidden">
+    <section style={{ background: 'var(--charcoal)', padding: 'clamp(3rem, 9vw, 7rem) 0' }} className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(181,66,42,0.14) 0%, transparent 70%)' }} />
       <div className="max-w-[1300px] mx-auto px-6 relative">
         <Reveal>

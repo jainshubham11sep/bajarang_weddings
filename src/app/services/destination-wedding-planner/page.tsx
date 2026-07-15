@@ -31,7 +31,7 @@ export default function DestinationWeddingPlannerPage() {
         </div>
       </div>
 
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-start">
           <Reveal direction="right">
             <div>
@@ -66,7 +66,7 @@ export default function DestinationWeddingPlannerPage() {
         </div>
       </section>
 
-      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
+      <section className="py-10 md:py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
         <Reveal>
           <div className="relative">

@@ -25,7 +25,7 @@ export default function FoundersPage() {
       </div>
 
       {/* Instagram CTA */}
-      <section className="py-16 px-4" style={{ background: 'var(--ivory)' }}>
+      <section className="py-9 md:py-16 px-4" style={{ background: 'var(--ivory)' }}>
         <Reveal>
           <div className="max-w-2xl mx-auto text-center">
             <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Follow Our Journey</p>
@@ -46,7 +46,7 @@ export default function FoundersPage() {
       </section>
 
       {/* Manmohan Agrawal */}
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-10 md:py-20 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-5 gap-12 items-start">
             {/* Identity card */}
@@ -167,7 +167,7 @@ export default function FoundersPage() {
       </div>
 
       {/* Ashutosh Agrawal */}
-      <section className="py-20 px-4" style={{ background: 'var(--ivory)' }}>
+      <section className="py-10 md:py-20 px-4" style={{ background: 'var(--ivory)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-5 gap-12 items-start">
             {/* Bio first on desktop */}
@@ -279,7 +279,7 @@ export default function FoundersPage() {
 
       {/* Legacy section */}
       <section
-        className="py-16 px-4 text-center text-white"
+        className="py-9 md:py-16 px-4 text-center text-white"
         style={{ background: 'linear-gradient(135deg, #1A1A1A 0%, #2D2520 100%)' }}
       >
         <div className="max-w-3xl mx-auto">

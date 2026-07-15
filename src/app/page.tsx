@@ -68,7 +68,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Stats ────────────────────────────────────────────── */}
-      <section style={{ background: 'var(--cream)', padding: '5rem 1.5rem' }}>
+      <section style={{ background: 'var(--cream)', padding: 'clamp(2.5rem, 7vw, 5rem) 1.5rem' }}>
         <Stagger className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-px" gap={0.12}>
           {stats.map((s) => (
             <StaggerItem key={s.label}>
@@ -82,7 +82,7 @@ export default function HomePage() {
       </section>
 
       {/* ── About — asymmetric bento ────────────────────────── */}
-      <section style={{ background: 'var(--ivory)', padding: '7rem 1.5rem' }}>
+      <section style={{ background: 'var(--ivory)', padding: 'clamp(3rem, 9vw, 7rem) 1.5rem' }}>
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-[1fr_1.1fr] gap-16 items-center">
           <Reveal direction="right">
             <div>
@@ -132,7 +132,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Services ─────────────────────────────────────────── */}
-      <section style={{ background: 'var(--cream)', padding: '7rem 1.5rem' }}>
+      <section style={{ background: 'var(--cream)', padding: 'clamp(3rem, 9vw, 7rem) 1.5rem' }}>
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
@@ -165,7 +165,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Pull Quote ───────────────────────────────────────── */}
-      <section style={{ background: 'var(--brand)', padding: '6rem 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--brand)', padding: 'clamp(2.5rem, 8vw, 6rem) 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
         <Reveal>
           <div className="max-w-[780px] mx-auto relative">
@@ -187,7 +187,7 @@ export default function HomePage() {
       <VideoReels />
 
       {/* ── Venues ───────────────────────────────────────────── */}
-      <section style={{ background: 'var(--ivory)', padding: '7rem 1.5rem' }}>
+      <section style={{ background: 'var(--ivory)', padding: 'clamp(3rem, 9vw, 7rem) 1.5rem' }}>
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
@@ -230,7 +230,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Testimonials ─────────────────────────────────────── */}
-      <section style={{ background: 'var(--cream)', padding: '7rem 1.5rem' }}>
+      <section style={{ background: 'var(--cream)', padding: 'clamp(3rem, 9vw, 7rem) 1.5rem' }}>
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
@@ -261,7 +261,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section style={{ background: 'var(--ink)', padding: '7rem 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--ink)', padding: 'clamp(3rem, 9vw, 7rem) 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(181,66,42,0.18) 0%, transparent 70%)',
         }} />

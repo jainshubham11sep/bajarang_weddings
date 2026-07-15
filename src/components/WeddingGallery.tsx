@@ -10,7 +10,7 @@ const totalCount = weddingGalleryPhotos.length;
 
 export default function WeddingGallery() {
   return (
-    <section style={{ background: 'var(--ink)', padding: '7rem 1.5rem' }}>
+    <section style={{ background: 'var(--ink)', padding: 'clamp(3rem, 9vw, 7rem) 1.5rem' }}>
       <div className="max-w-[1100px] mx-auto">
         <Reveal>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>

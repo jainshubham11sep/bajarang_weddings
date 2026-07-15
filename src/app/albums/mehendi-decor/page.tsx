@@ -37,7 +37,7 @@ export default function MehendiDecorPage() {
           <p>Elegant and intricate mehendi setups blending tradition with contemporary aesthetics</p>
         </div>
       </div>
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-10 md:py-20 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="gallery-grid">

@@ -22,7 +22,7 @@ export default function AlbumsGalleryClient() {
         </div>
       </div>
 
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <Stagger className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" gap={0.06}>
             {weddingGalleryPhotos.map((p, i) => (

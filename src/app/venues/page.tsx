@@ -72,7 +72,7 @@ export default function VenuesPage() {
         </div>
       </div>
 
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <Stagger className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6" gap={0.08}>
           {venues.map((v) => (
             <StaggerItem key={v.name}>

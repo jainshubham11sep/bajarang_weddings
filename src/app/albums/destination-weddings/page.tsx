@@ -37,7 +37,7 @@ export default function DestinationWeddingsPage() {
           <p>Breathtaking celebrations set against the lakes, deserts, and forts of Rajasthan</p>
         </div>
       </div>
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-10 md:py-20 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="gallery-grid">

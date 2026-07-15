@@ -21,7 +21,7 @@ export default function TeamPage() {
       </div>
 
       {/* Manmohan Agrawal */}
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <Reveal>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div className="flex flex-col items-center md:items-start">
@@ -64,7 +64,7 @@ export default function TeamPage() {
       </section>
 
       {/* Ashutosh Agrawal */}
-      <section className="py-24 px-4" style={{ background: 'var(--ivory)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--ivory)' }}>
         <Reveal>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div className="order-2 md:order-1">
@@ -107,7 +107,7 @@ export default function TeamPage() {
       </section>
 
       {/* In-house team mention */}
-      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
+      <section className="py-10 md:py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(181,66,42,0.16) 0%, transparent 70%)' }} />
         <Reveal>
         <div className="max-w-2xl mx-auto relative">

@@ -79,7 +79,7 @@ export default function TestimonialsPage() {
       </div>
 
       {/* Written Reviews */}
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center mb-14">
@@ -118,7 +118,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Video Testimonials */}
-      <section className="py-24 px-4" style={{ background: 'var(--ivory)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--ivory)' }}>
         <div className="max-w-5xl mx-auto">
           <Reveal>
             <div className="text-center mb-14">
@@ -158,7 +158,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
+      <section className="py-10 md:py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
         <Reveal>
           <div className="relative">

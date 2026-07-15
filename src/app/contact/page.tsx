@@ -44,7 +44,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14">
           {/* Inquiry Form */}
           <Reveal direction="right">

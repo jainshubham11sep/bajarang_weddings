@@ -21,8 +21,8 @@ export default function Footer() {
                 <Image
                   src="/logo.png"
                   alt="Bajranng Weddings"
-                  width={160}
-                  height={56}
+                  width={690}
+                  height={308}
                   className="object-contain brightness-0 invert opacity-90"
                   style={{ height: '48px', width: 'auto' }}
                   onError={() => setLogoError(true)}

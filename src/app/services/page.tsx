@@ -77,7 +77,7 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" gap={0.06}>
             {services.map((s) => (
@@ -94,7 +94,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 px-4 relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
+      <section className="py-10 md:py-20 px-4 relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(181,66,42,0.16) 0%, transparent 70%)' }} />
         <Reveal>
           <div className="max-w-4xl mx-auto text-center text-white relative">

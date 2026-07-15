@@ -37,7 +37,7 @@ export default function HaldiDecorPage() {
           <p>Joyful and vibrant haldi ceremonies transformed into stunning visual experiences</p>
         </div>
       </div>
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-10 md:py-20 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="gallery-grid">

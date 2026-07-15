@@ -418,6 +418,6 @@ body {
 
 @media (max-width: 768px) {
   .page-hero {
-    padding: 7rem 1rem 4rem;
+    padding: 6rem 1rem 2.5rem;
   }
 }
