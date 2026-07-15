@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'About Us | Bajranng Weddings',
@@ -46,161 +47,160 @@ export default function AboutPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="label mb-4" style={{ color: 'rgba(181,66,42,0.8)' }}>Our Journey</p>
-        <h1>About Bajranng Weddings</h1>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', margin: '1.25rem auto' }}>
-          <div style={{ width: '40px', height: '1px', background: 'rgba(181,66,42,0.5)' }} />
-          <div style={{ width: '5px', height: '5px', background: 'var(--brand)', borderRadius: '50%' }} />
-          <div style={{ width: '40px', height: '1px', background: 'rgba(181,66,42,0.5)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>Our Journey</p>
+          <h1>About Bajranng Weddings</h1>
+          <div className="section-divider" />
+          <p>Designing Grand Weddings for 35+ Years — born in Rajasthan, trusted across India</p>
         </div>
-        <p>Designing Grand Weddings for 35+ Years — born in Rajasthan, trusted across India</p>
-        <p style={{ fontFamily: 'var(--body-font)', fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(181,66,42,0.6)', marginTop: '1rem' }}>
-          Wedding Planners &nbsp;&middot;&nbsp; Luxury Decor &nbsp;&middot;&nbsp; Destination Weddings &nbsp;&middot;&nbsp; Global Celebrations
-        </p>
       </div>
 
       {/* Our Story */}
-      <section id="our-story" className="py-20 px-4" style={{ background: 'var(--cream)' }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Our Story</p>
-            <h2 className="section-title text-left mb-4">Born from a Passion for Perfection</h2>
-            <div className="section-divider mx-0 mb-6" />
-            <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
-              Bajranng Weddings was founded in 1991 by Manmohan Agrawal in the heart of Kota, Rajasthan — driven by
-              one unwavering belief: every Indian wedding deserves to be a royal celebration. What began as a passionate
-              one-man vision has grown into one of India&apos;s most respected luxury wedding companies.
-            </p>
-            <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
-              Drawing deeply from Rajasthan&apos;s rich royal heritage — its magnificent palaces, vibrant culture, and
-              traditions of grand hospitality — we built a company that doesn&apos;t just plan weddings, but crafts
-              immersive experiences that families treasure for generations.
-            </p>
-            <p className="leading-relaxed mb-8" style={{ color: 'var(--text-muted)' }}>
-              Today, 35 years on, with over 2000 weddings executed and a team of 200+ creative professionals, we remain
-              as dedicated to that original vision as ever: making every wedding a timeless masterpiece.
-            </p>
-            <div className="flex gap-4 flex-wrap">
-              <Link href="/contact" className="btn-primary">Start Your Journey</Link>
-              <Link href="/about/founders" className="btn-outline">Founder&apos;s Note</Link>
-            </div>
-          </div>
-          <div className="space-y-4">
-            {milestones.map((m) => (
-              <div key={m.year} className="flex gap-5 items-start">
-                <div className="flex-shrink-0 w-16 text-right">
-                  <span className="font-bold text-sm" style={{ color: 'var(--gold)', fontFamily: 'var(--display-font)' }}>{m.year}</span>
-                </div>
-                <div className="flex-shrink-0 flex flex-col items-center pt-1">
-                  <div className="w-3 h-3 rounded-full" style={{ background: 'var(--gold)' }} />
-                  <div className="w-px flex-1 mt-1" style={{ background: 'rgba(201,168,76,0.3)', minHeight: '2rem' }} />
-                </div>
-                <p className="text-sm leading-relaxed pb-4" style={{ color: 'var(--text-muted)' }}>{m.event}</p>
+      <section id="our-story" className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <Reveal direction="right">
+            <div>
+              <p className="eyebrow mb-4">Our Story</p>
+              <h2 className="display-xl" style={{ fontSize: 'clamp(2rem, 4vw, 2.9rem)', color: 'var(--ink)', marginBottom: '1.5rem' }}>Born from a Passion for Perfection</h2>
+              <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
+                Bajranng Weddings was founded in 1991 by Manmohan Agrawal in the heart of Kota, Rajasthan — driven by
+                one unwavering belief: every Indian wedding deserves to be a royal celebration. What began as a passionate
+                one-man vision has grown into one of India&apos;s most respected luxury wedding companies.
+              </p>
+              <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
+                Drawing deeply from Rajasthan&apos;s rich royal heritage — its magnificent palaces, vibrant culture, and
+                traditions of grand hospitality — we built a company that doesn&apos;t just plan weddings, but crafts
+                immersive experiences that families treasure for generations.
+              </p>
+              <p className="leading-relaxed mb-8" style={{ color: 'var(--text-muted)' }}>
+                Today, 35 years on, with over 2000 weddings executed and a team of 200+ creative professionals, we remain
+                as dedicated to that original vision as ever: making every wedding a timeless masterpiece.
+              </p>
+              <div className="flex gap-4 flex-wrap">
+                <Link href="/contact" className="btn-primary"><span>Start Your Journey</span></Link>
+                <Link href="/about/founders" className="btn-outline"><span>Founder&apos;s Note</span></Link>
               </div>
+            </div>
+          </Reveal>
+          <Stagger className="space-y-0" gap={0.1}>
+            {milestones.map((m, i) => (
+              <StaggerItem key={m.year} direction="left">
+                <div className="flex gap-5 items-start">
+                  <div className="flex-shrink-0 w-16 text-right">
+                    <span className="font-bold text-sm" style={{ color: 'var(--brand)', fontFamily: 'var(--display-font)', fontStyle: 'italic', fontSize: '1.1rem' }}>{m.year}</span>
+                  </div>
+                  <div className="flex-shrink-0 flex flex-col items-center pt-1">
+                    <div className="w-3 h-3 rounded-full" style={{ background: 'var(--brand)' }} />
+                    {i < milestones.length - 1 && <div className="w-px flex-1 mt-1" style={{ background: 'var(--stone)', minHeight: '2rem' }} />}
+                  </div>
+                  <p className="text-sm leading-relaxed pb-4" style={{ color: 'var(--text-muted)' }}>{m.event}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section id="why-choose" className="py-20 px-4" style={{ background: 'var(--ivory)' }}>
+      <section id="why-choose" className="py-24 px-4" style={{ background: 'var(--ivory)' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: 'var(--gold)' }}>Why Us</p>
-          <h2 className="section-title mb-2">Why Choose Bajranng Weddings</h2>
-          <div className="section-divider mb-4" />
-          <p className="section-subtitle">Six reasons why discerning couples trust us with their most important day</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Reveal>
+            <div className="text-center mb-16">
+              <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Why Us</p>
+              <h2 className="display-xl" style={{ fontSize: 'clamp(2rem, 4vw, 2.9rem)', color: 'var(--ink)', marginBottom: '0.75rem' }}>Why Choose Bajranng Weddings</h2>
+              <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>Six reasons why discerning couples trust us with their most important day</p>
+            </div>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" gap={0.08}>
             {whyChooseUs.map((item) => (
-              <div key={item.title} className="bg-white p-7 card-hover" style={{ borderTop: '3px solid var(--gold)' }}>
-                <div className="text-lg font-semibold mb-3" style={{ fontFamily: 'var(--display-font)', color: 'var(--charcoal)' }}>{item.title}</div>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{item.desc}</p>
-              </div>
+              <StaggerItem key={item.title}>
+                <div className="modern-card h-full" style={{ padding: '2.25rem', borderTop: '3px solid var(--brand)' }}>
+                  <div className="text-lg font-semibold mb-3" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', fontWeight: 500, color: 'var(--charcoal)' }}>{item.title}</div>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{item.desc}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* In-house Production */}
-      <section id="production" className="py-20 px-4" style={{ background: 'var(--charcoal)' }}>
-        <div className="max-w-5xl mx-auto text-center text-white">
-          <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: 'var(--gold)' }}>What Sets Us Apart</p>
-          <h2 className="section-title mb-2" style={{ color: 'white' }}>In-house Production & Execution</h2>
-          <div className="section-divider mb-6" />
-          <p className="leading-relaxed mb-6 max-w-3xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            Most wedding planners are coordinators — they hire vendors and hope for the best. We are builders.
-            Our in-house team of artisans, designers, fabricators, lighting experts, and event managers ensures
-            every element of your wedding is crafted to our exacting standards.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+      <section id="production" className="py-24 px-4 relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(181,66,42,0.16) 0%, transparent 70%)' }} />
+        <div className="max-w-5xl mx-auto text-center text-white relative">
+          <Reveal>
+            <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>What Sets Us Apart</p>
+            <h2 className="display-xl" style={{ fontSize: 'clamp(2rem, 4vw, 2.9rem)', color: 'white', marginBottom: '1.25rem' }}>In-house Production &amp; Execution</h2>
+            <p className="leading-relaxed mb-6 max-w-3xl mx-auto" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              Most wedding planners are coordinators — they hire vendors and hope for the best. We are builders.
+              Our in-house team of artisans, designers, fabricators, lighting experts, and event managers ensures
+              every element of your wedding is crafted to our exacting standards.
+            </p>
+          </Reveal>
+          <Stagger className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-12" gap={0.08}>
             {[
               { num: '200+', label: 'Team Members' },
               { num: '50+', label: 'Artisans & Craftsmen' },
               { num: '30+', label: 'In-house Designers' },
               { num: '100%', label: 'Quality Controlled' },
             ].map((s) => (
-              <div key={s.label} className="p-5 border" style={{ borderColor: 'rgba(201,168,76,0.4)' }}>
-                <div className="text-3xl font-bold mb-1" style={{ color: 'var(--gold-light)', fontFamily: 'var(--display-font)' }}>{s.num}</div>
-                <div className="text-xs tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.55)' }}>{s.label}</div>
-              </div>
+              <StaggerItem key={s.label}>
+                <div className="glass-dark p-6 h-full">
+                  <div className="text-3xl font-bold mb-1" style={{ color: 'var(--brand-light)', fontFamily: 'var(--display-font)', fontStyle: 'italic', fontWeight: 400 }}>{s.num}</div>
+                  <div className="text-xs tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.55)' }}>{s.label}</div>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* Luxury Expertise */}
-      <section id="expertise" className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section id="expertise" className="py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: 'var(--gold)' }}>Our Expertise</p>
-          <h2 className="section-title mb-2">Luxury & Royal Wedding Expertise</h2>
-          <div className="section-divider mb-4" />
-          <p className="section-subtitle">Decades of experience with India&apos;s most prestigious celebrations</p>
-          <div className="grid md:grid-cols-2 gap-8">
+          <Reveal>
+            <div className="text-center mb-16">
+              <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Our Expertise</p>
+              <h2 className="display-xl" style={{ fontSize: 'clamp(2rem, 4vw, 2.9rem)', color: 'var(--ink)', marginBottom: '0.75rem' }}>Luxury &amp; Royal Wedding Expertise</h2>
+              <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>Decades of experience with India&apos;s most prestigious celebrations</p>
+            </div>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 gap-10" gap={0.1}>
             {[
-              {
-                title: 'Palace Weddings',
-                desc: 'We have exclusive partnerships with 50+ royal properties across Rajasthan, granting our couples access to venues unavailable through other channels.',
-              },
-              {
-                title: 'Grand Scale Events',
-                desc: 'From intimate 50-person ceremonies to 2000-guest celebrations — our logistics and production capabilities scale seamlessly.',
-              },
-              {
-                title: 'Ceremonial Authenticity',
-                desc: 'Our cultural experts ensure every ritual and tradition is honored with the reverence and grandeur it deserves.',
-              },
-              {
-                title: 'International Standards',
-                desc: 'We host and plan for NRI and international couples, fluent in coordinating across time zones, currencies, and cultures.',
-              },
+              { title: 'Palace Weddings', desc: 'We have exclusive partnerships with 50+ royal properties across Rajasthan, granting our couples access to venues unavailable through other channels.' },
+              { title: 'Grand Scale Events', desc: 'From intimate 50-person ceremonies to 2000-guest celebrations — our logistics and production capabilities scale seamlessly.' },
+              { title: 'Ceremonial Authenticity', desc: 'Our cultural experts ensure every ritual and tradition is honored with the reverence and grandeur it deserves.' },
+              { title: 'International Standards', desc: 'We host and plan for NRI and international couples, fluent in coordinating across time zones, currencies, and cultures.' },
             ].map((e) => (
-              <div key={e.title} className="flex gap-5">
-                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full text-white text-sm"
-                  style={{ background: 'var(--gold)' }}>✦</div>
-                <div>
-                  <h3 className="font-semibold mb-2" style={{ fontFamily: 'var(--display-font)', color: 'var(--charcoal)' }}>{e.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{e.desc}</p>
+              <StaggerItem key={e.title}>
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-11 h-11 flex items-center justify-center text-white text-sm" style={{ background: 'var(--brand)' }}>✦</div>
+                  <div>
+                    <h3 className="font-semibold mb-2" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', fontWeight: 500, color: 'var(--charcoal)', fontSize: '1.1rem' }}>{e.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{e.desc}</p>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 text-center" style={{ background: 'var(--gold)' }}>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic' }}>
-          Let&apos;s Create Something Extraordinary Together
-        </h2>
-        <div className="flex flex-wrap gap-4 justify-center mt-6">
-          <Link href="/contact" className="bg-white text-sm tracking-widest uppercase px-8 py-3 transition-all hover:bg-gray-100"
-            style={{ color: 'var(--gold-dark)', fontFamily: 'var(--display-font)' }}>
-            Contact Us
-          </Link>
-          <Link href="/team" className="border border-white text-white text-sm tracking-widest uppercase px-8 py-3 transition-all hover:bg-white/10"
-            style={{ fontFamily: 'var(--display-font)' }}>
-            Meet Our Team
-          </Link>
-        </div>
+      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
+        <Reveal>
+          <div className="relative">
+            <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', color: 'white', marginBottom: '1.75rem' }}>
+              Let&apos;s Create Something Extraordinary Together
+            </h2>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/contact" className="btn-ghost-light" style={{ background: 'white', color: 'var(--brand-dark)', borderColor: 'white' }}><span>Contact Us</span></Link>
+              <Link href="/team" className="btn-ghost-light"><span>Meet Our Team</span></Link>
+            </div>
+          </div>
+        </Reveal>
       </section>
     </>
   );

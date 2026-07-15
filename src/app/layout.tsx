@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfairDisplay.variable} ${raleway.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        <main className="flex-1 pt-[64px]">{children}</main>
+        <main className="flex-1 pt-[76px]">{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>

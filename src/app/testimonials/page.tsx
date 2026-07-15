@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Testimonials | Bajranng Weddings',
@@ -13,7 +15,7 @@ const testimonials = [
     venue: 'Taj Lake Palace, Udaipur',
     date: 'December 2023',
     rating: 5,
-    text: 'Bajranng Weddings turned our dream of a palace wedding in Udaipur into the most magical reality. Every detail was immaculate — from the floral mandap to the baraat procession on decorated elephants. Rajiv and Priya were with us every step of the way, and the day exceeded every expectation we had.',
+    text: 'Bajranng Weddings turned our dream of a palace wedding in Udaipur into the most magical reality. Every detail was immaculate — from the floral mandap to the baraat procession on decorated elephants. The team was with us every step of the way, and the day exceeded every expectation we had.',
   },
   {
     name: 'Sanya & Vikram Singhania',
@@ -58,99 +60,115 @@ const testimonials = [
 ];
 
 const videoTestimonials = [
-  { name: 'The Mehta Wedding', venue: 'Udaipur', duration: '3:45' },
-  { name: 'The Singhania Wedding', venue: 'Jaipur', duration: '4:12' },
-  { name: 'The Kapoor Wedding', venue: 'Jodhpur', duration: '3:28' },
+  { name: 'The Mehta Wedding', venue: 'Udaipur', duration: '3:45', img: '/images/gallery/IMG_1936.jpeg' },
+  { name: 'The Singhania Wedding', venue: 'Jaipur', duration: '4:12', img: '/images/gallery/IMG_1938.jpeg' },
+  { name: 'The Kapoor Wedding', venue: 'Jodhpur', duration: '3:28', img: '/images/gallery/IMG_1937.jpeg' },
 ];
 
 export default function TestimonialsPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Real Couples. Real Stories.</p>
-        <h1>Testimonials</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Hear from the couples who trusted us with their most important day</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>Real Couples. Real Stories.</p>
+          <h1>Testimonials</h1>
+          <div className="section-divider" />
+          <p>Hear from the couples who trusted us with their most important day</p>
+        </div>
       </div>
 
       {/* Written Reviews */}
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="section-title mb-2">Client Reviews</h2>
-          <div className="section-divider mb-4" />
-          <p className="section-subtitle">Straight from the hearts of our couples</p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Client Reviews</p>
+              <h2 className="display-xl" style={{ fontSize: 'clamp(2rem, 4vw, 2.9rem)', color: 'var(--ink)', marginBottom: '0.75rem' }}>Straight From the Heart</h2>
+            </div>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 gap-6" gap={0.06}>
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-white p-8 card-hover">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-4xl opacity-15 leading-none" style={{ color: 'var(--gold)', fontFamily: 'Georgia, serif' }}>&ldquo;</div>
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: t.rating }, (_, i) => (
-                      <span key={i} className="text-sm" style={{ color: 'var(--gold)' }}>★</span>
-                    ))}
+              <StaggerItem key={t.name}>
+                <div className="modern-card p-8 h-full">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="text-4xl opacity-15 leading-none" style={{ color: 'var(--brand)', fontFamily: 'var(--display-font)' }}>&ldquo;</div>
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: t.rating }, (_, i) => (
+                        <span key={i} className="text-sm" style={{ color: 'var(--brand)' }}>★</span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm leading-relaxed mb-6 italic" style={{ color: 'var(--text-muted)', fontFamily: 'var(--display-font)' }}>{t.text}</p>
+                  <div className="border-t pt-4" style={{ borderColor: 'var(--stone)' }}>
+                    <div className="font-semibold text-sm" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}>{t.name}</div>
+                    <div className="text-xs mt-1 flex gap-2 flex-wrap">
+                      <span style={{ color: 'var(--brand)', fontWeight: 600 }}>{t.location}</span>
+                      <span style={{ color: 'var(--text-muted)' }}>·</span>
+                      <span style={{ color: 'var(--text-muted)' }}>{t.venue}</span>
+                      <span style={{ color: 'var(--text-muted)' }}>·</span>
+                      <span style={{ color: 'var(--text-muted)' }}>{t.date}</span>
+                    </div>
                   </div>
                 </div>
-                <p className="text-sm leading-relaxed mb-6 italic" style={{ color: 'var(--text-muted)' }}>{t.text}</p>
-                <div className="border-t pt-4" style={{ borderColor: 'var(--ivory)' }}>
-                  <div className="font-semibold text-sm" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{t.name}</div>
-                  <div className="text-xs mt-1 flex gap-2 flex-wrap">
-                    <span style={{ color: 'var(--gold)' }}>{t.location}</span>
-                    <span style={{ color: 'var(--text-muted)' }}>·</span>
-                    <span style={{ color: 'var(--text-muted)' }}>{t.venue}</span>
-                    <span style={{ color: 'var(--text-muted)' }}>·</span>
-                    <span style={{ color: 'var(--text-muted)' }}>{t.date}</span>
-                  </div>
-                </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* Video Testimonials */}
-      <section className="py-20 px-4" style={{ background: 'var(--ivory)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--ivory)' }}>
         <div className="max-w-5xl mx-auto">
-          <h2 className="section-title mb-2">Video Testimonials</h2>
-          <div className="section-divider mb-4" />
-          <p className="section-subtitle">Watch our couples share their experience</p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Video Testimonials</p>
+              <h2 className="display-xl" style={{ fontSize: 'clamp(2rem, 4vw, 2.9rem)', color: 'var(--ink)', marginBottom: '0.75rem' }}>Watch Their Stories</h2>
+            </div>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-3 gap-6" gap={0.08}>
             {videoTestimonials.map((v) => (
-              <div key={v.name} className="card-hover cursor-pointer group">
-                <div className="relative flex items-center justify-center"
-                  style={{ background: 'var(--charcoal)', aspectRatio: '16/9' }}>
-                  <div className="w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all group-hover:scale-110"
-                    style={{ borderColor: 'var(--gold)', background: 'rgba(201,168,76,0.15)' }}>
-                    <div className="w-0 h-0 ml-1" style={{
-                      borderTop: '8px solid transparent',
-                      borderBottom: '8px solid transparent',
-                      borderLeft: '14px solid var(--gold)',
-                    }} />
+              <StaggerItem key={v.name}>
+                <div className="modern-card overflow-hidden cursor-pointer group">
+                  <div className="relative flex items-center justify-center" style={{ aspectRatio: '16/9' }}>
+                    <Image src={v.img} alt={v.name} fill style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }} className="group-hover:scale-105" />
+                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(13,11,9,0.35)' }} />
+                    <div className="relative w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all group-hover:scale-110"
+                      style={{ borderColor: 'var(--brand-light)', background: 'rgba(181,66,42,0.2)' }}>
+                      <div className="w-0 h-0 ml-1" style={{
+                        borderTop: '8px solid transparent',
+                        borderBottom: '8px solid transparent',
+                        borderLeft: '14px solid white',
+                      }} />
+                    </div>
+                    <div className="absolute bottom-2 right-2 text-xs px-2 py-0.5"
+                      style={{ background: 'rgba(0,0,0,0.6)', color: 'rgba(255,255,255,0.85)' }}>
+                      {v.duration}
+                    </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 text-xs px-2 py-0.5"
-                    style={{ background: 'rgba(0,0,0,0.6)', color: 'rgba(255,255,255,0.8)' }}>
-                    {v.duration}
+                  <div className="p-4">
+                    <div className="font-semibold text-sm mb-0.5" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}>{v.name}</div>
+                    <div className="text-xs tracking-widest uppercase" style={{ color: 'var(--brand)', fontWeight: 600 }}>{v.venue}</div>
                   </div>
                 </div>
-                <div className="bg-white p-4">
-                  <div className="font-semibold text-sm mb-0.5" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{v.name}</div>
-                  <div className="text-xs tracking-widest uppercase" style={{ color: 'var(--gold)' }}>{v.venue}</div>
-                </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 text-center" style={{ background: 'var(--gold)' }}>
-        <h2 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-          Be Our Next Success Story
-        </h2>
-        <p className="text-white/80 mb-6">Let&apos;s create memories your guests will talk about for years.</p>
-        <Link href="/contact" className="bg-white text-sm tracking-widest uppercase px-8 py-3"
-          style={{ color: 'var(--gold-dark)', fontFamily: 'Georgia, serif' }}>
-          Plan My Wedding
-        </Link>
+      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
+        <Reveal>
+          <div className="relative">
+            <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'white', marginBottom: '1rem' }}>
+              Be Our Next Success Story
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '2rem' }}>Let&apos;s create memories your guests will talk about for years.</p>
+            <Link href="/contact" className="btn-ghost-light" style={{ background: 'white', color: 'var(--brand-dark)', borderColor: 'white' }}><span>Plan My Wedding</span></Link>
+          </div>
+        </Reveal>
       </section>
     </>
   );

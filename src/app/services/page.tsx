@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Services | Bajranng Weddings',
@@ -67,39 +68,46 @@ export default function ServicesPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>What We Offer</p>
-        <h1>Our Services</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>End-to-end wedding planning, production, and execution — all under one roof</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>What We Offer</p>
+          <h1>Our Services</h1>
+          <div className="section-divider" />
+          <p>End-to-end wedding planning, production, and execution — all under one roof</p>
+        </div>
       </div>
 
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" gap={0.06}>
             {services.map((s) => (
-              <Link key={s.title} href={s.href}
-                className="bg-white p-7 card-hover service-card block no-underline">
-                <div className="text-3xl mb-4">{s.icon}</div>
-                <h3 className="text-base font-semibold mb-3" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{s.title}</h3>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>{s.desc}</p>
-                <div className="text-xs tracking-widest uppercase" style={{ color: 'var(--gold)' }}>Learn More →</div>
-              </Link>
+              <StaggerItem key={s.title}>
+                <Link href={s.href} className="modern-card service-card block no-underline h-full" style={{ padding: '2rem' }}>
+                  <div className="text-3xl mb-4">{s.icon}</div>
+                  <h3 className="text-base font-semibold mb-3" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', fontWeight: 500, color: 'var(--charcoal)' }}>{s.title}</h3>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>{s.desc}</p>
+                  <div className="text-xs tracking-widest uppercase font-semibold" style={{ color: 'var(--brand)' }}>Learn More →</div>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
-      <section className="py-16 px-4" style={{ background: 'var(--charcoal)' }}>
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--gold-light)' }}>
-            Every Service. One Team. Zero Compromise.
-          </h2>
-          <p className="mb-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            All our services are planned, designed, and executed by our in-house team — ensuring seamless
-            coordination and consistent quality across every aspect of your wedding.
-          </p>
-          <Link href="/contact" className="btn-primary">Get a Custom Quote</Link>
-        </div>
+      <section className="py-20 px-4 relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(181,66,42,0.16) 0%, transparent 70%)' }} />
+        <Reveal>
+          <div className="max-w-4xl mx-auto text-center text-white relative">
+            <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', color: 'var(--brand-light)', marginBottom: '1.5rem' }}>
+              Every Service. One Team. Zero Compromise.
+            </h2>
+            <p className="mb-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              All our services are planned, designed, and executed by our in-house team — ensuring seamless
+              coordination and consistent quality across every aspect of your wedding.
+            </p>
+            <Link href="/contact" className="btn-primary"><span>Get a Custom Quote</span></Link>
+          </div>
+        </Reveal>
       </section>
     </>
   );

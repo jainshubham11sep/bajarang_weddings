@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { Reveal } from '@/components/Reveal';
 
 const offices = [
   {
     city: 'Head Office — Kota',
     address: '414, near Hadoti Hospital, Special, Rajiv Gandhi Nagar, Kota, Rajasthan 324005',
-    phone: '+91 98290 37466',
+    phone: '+91 82248 94743',
     phone2: '+91 96365 48645',
     email: 'eventsbajranng@gmail.com',
   },
@@ -34,18 +35,22 @@ export default function ContactPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Let&apos;s Begin</p>
-        <h1>Contact Us</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Reach out to start planning the wedding of your dreams</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>Let&apos;s Begin</p>
+          <h1>Contact Us</h1>
+          <div className="section-divider" />
+          <p>Reach out to start planning the wedding of your dreams</p>
+        </div>
       </div>
 
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14">
           {/* Inquiry Form */}
+          <Reveal direction="right">
           <div>
-            <h2 className="section-title text-left mb-2">Send Us an Inquiry</h2>
-            <div className="section-divider mx-0 mb-6" />
+            <p className="eyebrow mb-4">Get In Touch</p>
+            <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: 'var(--ink)', marginBottom: '1.75rem' }}>Send Us an Inquiry</h2>
 
             {submitted ? (
               <div className="bg-white p-10 text-center">
@@ -164,41 +169,43 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full text-center text-white">
-                  Send Inquiry
+                <button type="submit" className="btn-primary w-full justify-center text-white">
+                  <span>Send Inquiry</span>
                 </button>
               </form>
             )}
           </div>
+          </Reveal>
 
           {/* Contact Info */}
+          <Reveal direction="left" delay={0.1}>
           <div>
-            <h2 className="section-title text-left mb-2">Get In Touch</h2>
-            <div className="section-divider mx-0 mb-6" />
+            <p className="eyebrow mb-4">Reach Us</p>
+            <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: 'var(--ink)', marginBottom: '1.75rem' }}>Get In Touch</h2>
 
             {/* Quick contact */}
             <div className="grid grid-cols-2 gap-4 mb-8">
-              <a href="tel:+919829037466"
-                className="bg-white p-5 text-center card-hover block no-underline">
+              <a href="tel:+918224894743"
+                className="modern-card p-5 text-center block no-underline">
                 <div className="text-2xl mb-2">📞</div>
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--brand)' }}>Call Us</div>
-                <div className="text-xs font-medium" style={{ color: 'var(--charcoal)' }}>+91 98290 37466</div>
+                <div className="text-xs font-medium" style={{ color: 'var(--charcoal)' }}>+91 82248 94743</div>
                 <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>+91 96365 48645</div>
               </a>
-              <a href="https://wa.me/919829037466"
+              <a href="https://wa.me/918224894743"
                 target="_blank" rel="noopener noreferrer"
-                className="bg-white p-5 text-center card-hover block no-underline">
+                className="modern-card p-5 text-center block no-underline">
                 <div className="text-2xl mb-2">💬</div>
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: '#25D366' }}>WhatsApp</div>
                 <div className="text-xs" style={{ color: 'var(--charcoal)' }}>Chat with us now</div>
               </a>
               <a href="mailto:eventsbajranng@gmail.com"
-                className="bg-white p-5 text-center card-hover block no-underline">
+                className="modern-card p-5 text-center block no-underline">
                 <div className="text-2xl mb-2">✉️</div>
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--brand)' }}>Email</div>
                 <div className="text-xs" style={{ color: 'var(--charcoal)' }}>eventsbajranng@gmail.com</div>
               </a>
-              <div className="bg-white p-5 text-center card-hover">
+              <div className="modern-card p-5 text-center">
                 <div className="text-2xl mb-2">📅</div>
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--brand)' }}>Consultation</div>
                 <div className="text-xs" style={{ color: 'var(--charcoal)' }}>Mon–Sat, 10am–7pm IST</div>
@@ -206,12 +213,12 @@ export default function ContactPage() {
             </div>
 
             {/* Office Locations */}
-            <h3 className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>
+            <h3 className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ fontFamily: 'var(--body-font)', color: 'var(--charcoal)' }}>
               Our Office
             </h3>
             <div className="space-y-4">
               {offices.map((o) => (
-                <div key={o.city} className="bg-white p-5" style={{ borderLeft: '3px solid var(--brand)' }}>
+                <div key={o.city} className="modern-card p-5" style={{ borderLeft: '3px solid var(--brand)' }}>
                   <div className="font-semibold mb-2" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{o.city}</div>
                   <p className="text-xs leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>{o.address}</p>
                   <div className="space-y-0.5">
@@ -247,7 +254,7 @@ export default function ContactPage() {
 
             {/* Social Links */}
             <div className="mt-8">
-              <h3 className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>
+              <h3 className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ fontFamily: 'var(--body-font)', color: 'var(--charcoal)' }}>
                 Follow Us
               </h3>
               <div className="flex gap-3">
@@ -261,14 +268,14 @@ export default function ContactPage() {
                     target={s.href !== '#' ? '_blank' : undefined}
                     rel="noopener noreferrer"
                     title={s.name}
-                    className="w-12 h-12 bg-white flex items-center justify-center card-hover text-sm border"
-                    style={{ borderColor: 'var(--ivory)' }}>
+                    className="w-12 h-12 modern-card flex items-center justify-center text-sm">
                     {s.icon}
                   </a>
                 ))}
               </div>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
     </>

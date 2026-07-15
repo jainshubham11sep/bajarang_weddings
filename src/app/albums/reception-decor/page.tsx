@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { Reveal } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Reception Decor Album | Bajranng Weddings',
@@ -47,29 +48,32 @@ export default function ReceptionDecorPage() {
 
       <section style={{ background: 'var(--cream)', padding: '5rem 1.5rem' }}>
         <div className="max-w-[1200px] mx-auto">
-          <div className="gallery-grid">
-            {photos.map((photo, i) => (
-              <div key={i} className="gallery-item card-hover group cursor-pointer">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
-                />
-                <div className="gallery-overlay">
-                  <span style={{
-                    fontFamily: 'var(--body-font)',
-                    fontSize: '0.6rem',
-                    letterSpacing: '0.25em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(253,250,247,0.9)',
-                  }}>View Photo</span>
+          <Reveal>
+            <div className="gallery-grid">
+              {photos.map((photo, i) => (
+                <div key={i} className="gallery-item card-hover group cursor-pointer">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center', transition: 'transform 0.6s ease' }}
+                    className="group-hover:scale-105"
+                  />
+                  <div className="gallery-overlay">
+                    <span style={{
+                      fontFamily: 'var(--body-font)',
+                      fontSize: '0.6rem',
+                      letterSpacing: '0.25em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(253,250,247,0.9)',
+                    }}>View Photo</span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
           <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-            <Link href="/contact" className="btn-primary">Plan My Reception</Link>
+            <Link href="/contact" className="btn-primary"><span>Plan My Reception</span></Link>
           </div>
         </div>
       </section>
@@ -80,8 +84,8 @@ export default function ReceptionDecorPage() {
             Let&rsquo;s Plan Your Grand Reception
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-primary">Start Planning</Link>
-            <Link href="/albums" className="btn-outline" style={{ borderColor: 'rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.7)' }}>All Albums</Link>
+            <Link href="/contact" className="btn-primary"><span>Start Planning</span></Link>
+            <Link href="/albums" className="btn-ghost-light"><span>All Albums</span></Link>
           </div>
         </div>
       </section>

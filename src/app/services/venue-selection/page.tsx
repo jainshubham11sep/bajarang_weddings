@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Destination Wedding Planning & Venue Selection | Bajranng Weddings',
@@ -19,35 +20,42 @@ export default function VenueSelectionPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
-          <Link href="/services" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Services</Link> / Venue Selection
-        </p>
-        <h1>Destination Wedding Planning & Venue Selection</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Exclusive access to Rajasthan&apos;s most magnificent palaces and heritage properties</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>
+            <Link href="/services" style={{ color: 'var(--brand-light)', textDecoration: 'none' }}>Services</Link> / Venue Selection
+          </p>
+          <h1>Destination Wedding Planning & Venue Selection</h1>
+          <div className="section-divider" />
+          <p>Exclusive access to Rajasthan&apos;s most magnificent palaces and heritage properties</p>
+        </div>
       </div>
 
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="leading-relaxed text-center max-w-3xl mx-auto mb-12" style={{ color: 'var(--text-muted)' }}>
-            Choosing the right venue sets the tone for your entire wedding. Our team&apos;s deep relationships
-            with Rajasthan&apos;s finest properties — built over 15 years — gives you unmatched access,
-            preferred pricing, and expert guidance.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <Reveal>
+            <p className="leading-relaxed text-center max-w-3xl mx-auto mb-14" style={{ color: 'var(--text-muted)' }}>
+              Choosing the right venue sets the tone for your entire wedding. Our team&apos;s deep relationships
+              with Rajasthan&apos;s finest properties — built over 35 years — gives you unmatched access,
+              preferred pricing, and expert guidance.
+            </p>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" gap={0.07}>
             {venues.map((v) => (
-              <Link key={v.city} href={`/venues/${v.city.toLowerCase()}`}
-                className="bg-white p-6 card-hover block no-underline"
-                style={{ borderLeft: '3px solid var(--gold)' }}>
-                <div className="text-xl font-bold mb-1" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--charcoal)' }}>{v.city}</div>
-                <div className="text-xs tracking-widest uppercase mb-3" style={{ color: 'var(--gold)' }}>{v.mood}</div>
-                <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{v.properties}</p>
-              </Link>
+              <StaggerItem key={v.city}>
+                <Link href={`/venues/${v.city.toLowerCase()}`}
+                  className="modern-card p-6 block no-underline h-full"
+                  style={{ borderLeft: '3px solid var(--brand)' }}>
+                  <div className="text-xl font-bold mb-1" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', fontWeight: 500, color: 'var(--charcoal)' }}>{v.city}</div>
+                  <div className="text-xs tracking-widest uppercase mb-3" style={{ color: 'var(--brand)', fontWeight: 600 }}>{v.mood}</div>
+                  <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{v.properties}</p>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link href="/venues" className="btn-outline mr-4">Explore All Venues</Link>
-            <Link href="/contact" className="btn-primary">Get Venue Recommendations</Link>
+          </Stagger>
+          <div className="mt-14 text-center flex gap-4 justify-center flex-wrap">
+            <Link href="/venues" className="btn-outline"><span>Explore All Venues</span></Link>
+            <Link href="/contact" className="btn-primary"><span>Get Venue Recommendations</span></Link>
           </div>
         </div>
       </section>

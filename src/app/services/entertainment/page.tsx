@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Entertainment Activities for Wedding Guests | Bajranng Weddings',
@@ -19,31 +20,38 @@ export default function EntertainmentPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
-          <Link href="/services" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Services</Link> / Entertainment
-        </p>
-        <h1>Entertainment Activities for Wedding Guests</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Curated experiences that delight guests of all ages — from folk performances to adventure activities</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>
+            <Link href="/services" style={{ color: 'var(--brand-light)', textDecoration: 'none' }}>Services</Link> / Entertainment
+          </p>
+          <h1>Entertainment Activities for Wedding Guests</h1>
+          <div className="section-divider" />
+          <p>Curated experiences that delight guests of all ages — from folk performances to adventure activities</p>
+        </div>
       </div>
 
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
-          <p className="leading-relaxed text-center max-w-3xl mx-auto mb-12" style={{ color: 'var(--text-muted)' }}>
-            A great wedding keeps guests engaged, entertained, and talking for years. We curate
-            entertainment programs that reflect the spirit of Rajasthan&apos;s rich cultural heritage
-            while catering to modern sensibilities.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <Reveal>
+            <p className="leading-relaxed text-center max-w-3xl mx-auto mb-14" style={{ color: 'var(--text-muted)' }}>
+              A great wedding keeps guests engaged, entertained, and talking for years. We curate
+              entertainment programs that reflect the spirit of Rajasthan&apos;s rich cultural heritage
+              while catering to modern sensibilities.
+            </p>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" gap={0.07}>
             {entertainmentOptions.map((e) => (
-              <div key={e.title} className="bg-white p-7 card-hover" style={{ borderBottom: '3px solid var(--gold)' }}>
-                <h3 className="font-semibold mb-3" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{e.title}</h3>
-                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{e.desc}</p>
-              </div>
+              <StaggerItem key={e.title}>
+                <div className="modern-card p-7 h-full" style={{ borderBottom: '3px solid var(--brand)' }}>
+                  <h3 className="font-semibold mb-3" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}>{e.title}</h3>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{e.desc}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link href="/contact" className="btn-primary">Plan Entertainment</Link>
+          </Stagger>
+          <div className="mt-14 text-center">
+            <Link href="/contact" className="btn-primary"><span>Plan Entertainment</span></Link>
           </div>
         </div>
       </section>

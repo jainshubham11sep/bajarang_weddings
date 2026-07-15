@@ -7,9 +7,12 @@ import { useState } from 'react';
 export default function Footer() {
   const [logoError, setLogoError] = useState(false);
   return (
-    <footer style={{ background: 'var(--charcoal)', color: 'rgba(255,255,255,0.75)' }}>
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer style={{ background: 'var(--charcoal)', color: 'rgba(255,255,255,0.75)', position: 'relative', overflow: 'hidden' }}>
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse 50% 40% at 15% 0%, rgba(181,66,42,0.14) 0%, transparent 70%)',
+      }} />
+      <div className="max-w-7xl mx-auto px-5 py-20 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Brand */}
           <div>
@@ -143,8 +146,8 @@ export default function Footer() {
               </p>
               <p>
                 📞{' '}
-                <a href="tel:+919829037466" className="transition-colors hover:text-white">
-                  +91 98290 37466
+                <a href="tel:+918224894743" className="transition-colors hover:text-white">
+                  +91 82248 94743
                 </a>
               </p>
               <p>

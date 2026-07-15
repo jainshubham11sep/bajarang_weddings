@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Terracotta theme — extracted from Bajranng Weddings logo */
+  /* Terracotta theme — kept from brand identity */
   --brand: #B5422A;
   --brand-light: #D4694A;
   --brand-dark: #8B2D18;
@@ -12,19 +12,24 @@
   --charcoal-light: #2E1F18;
   --text-muted: #6B5347;
 
-  /* Aliases used throughout components */
   --ink: #1C1512;
   --ink-soft: rgba(28,21,18,0.65);
   --stone: #DDD8D1;
 
-  /* Backward-compat aliases */
   --gold: var(--brand);
   --gold-light: var(--brand-light);
   --gold-dark: var(--brand-dark);
 
-  /* Typography — Playfair Display (display) + Raleway (body) */
   --display-font: var(--font-display), 'Playfair Display', Georgia, serif;
   --body-font: var(--font-body), Raleway, 'Helvetica Neue', sans-serif;
+
+  /* Modern layer tokens */
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --glass-bg-light: rgba(28,21,18,0.04);
+  --glass-border-light: rgba(28,21,18,0.08);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius: 2px;
 }
 
 @theme inline {
@@ -46,11 +51,46 @@ body {
   font-family: var(--body-font);
 }
 
+::selection {
+  background: var(--brand);
+  color: white;
+}
+
+/* ── Typography helpers ─────────────────────────── */
+
 .label {
   font-family: var(--body-font);
   font-size: 0.65rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--body-font);
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--brand);
+}
+
+.display-xl {
+  font-family: var(--display-font);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
 }
 
 .hr-brand {
@@ -68,52 +108,104 @@ body {
   margin: 1rem auto;
 }
 
+/* ── Buttons ─────────────────────────────────────── */
+
 .btn-primary {
-  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  position: relative;
+  background: var(--charcoal);
   color: white;
-  padding: 0.75rem 2rem;
+  padding: 1rem 2.25rem;
   border: none;
   cursor: pointer;
   font-family: var(--body-font);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  transition: all 0.3s ease;
-  display: inline-block;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: background 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   text-decoration: none;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brand);
+  transform: translateX(-101%);
+  transition: transform 0.45s var(--ease-out);
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  transform: translateX(0);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--brand), var(--brand-light));
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(181, 66, 42, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--brand);
-  padding: 0.75rem 2rem;
-  border: 1px solid var(--brand);
+  color: var(--charcoal);
+  padding: 1rem 2.25rem;
+  border: 1px solid rgba(28,21,18,0.25);
   cursor: pointer;
   font-family: var(--body-font);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  transition: all 0.3s ease;
-  display: inline-block;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: all 0.35s var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   text-decoration: none;
 }
 
 .btn-outline:hover {
-  background: var(--brand);
+  background: var(--charcoal);
   color: white;
+  border-color: var(--charcoal);
+  transform: translateY(-2px);
 }
+
+.btn-ghost-light {
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  padding: 1rem 2.25rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  font-family: var(--body-font);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: all 0.35s var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.btn-ghost-light:hover {
+  background: rgba(255,255,255,0.95);
+  color: var(--charcoal);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+/* ── Nav ─────────────────────────────────────────── */
 
 .nav-link {
   position: relative;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  font-weight: 500;
   color: var(--charcoal);
   transition: color 0.3s;
   text-decoration: none;
@@ -123,12 +215,12 @@ body {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 0;
   height: 1px;
   background: var(--brand);
-  transition: width 0.3s ease;
+  transition: width 0.3s var(--ease-out);
 }
 
 .nav-link:hover::after {
@@ -139,23 +231,57 @@ body {
   color: var(--brand);
 }
 
+/* ── Glass / modern surfaces ─────────────────────── */
+
+.glass-dark {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-light {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--glass-border-light);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.modern-card {
+  background: white;
+  border: 1px solid var(--stone);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.5s var(--ease-out);
+}
+
+.modern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -20px rgba(28,21,18,0.18);
+  border-color: transparent;
+}
+
+/* ── Hero / section headers ──────────────────────── */
+
 .page-hero {
-  background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 100%);
+  background: var(--charcoal);
   color: white;
-  padding: 6rem 1rem 4rem;
+  padding: 9rem 1rem 5rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .page-hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-family: var(--display-font);
-  color: var(--brand-pale);
+  color: rgba(253,250,247,0.97);
   margin-bottom: 1rem;
+  font-weight: 300;
   font-style: italic;
+  letter-spacing: -0.01em;
 }
 
 .page-hero p {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.6);
   font-size: 1.05rem;
   max-width: 600px;
   margin: 0 auto;
@@ -163,11 +289,14 @@ body {
 
 .section-title {
   font-family: var(--display-font);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 300;
   color: var(--charcoal);
   text-align: center;
   margin-bottom: 0.5rem;
   font-style: italic;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .section-subtitle {
@@ -198,8 +327,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+  transition: transform 0.3s var(--ease-out);
   text-decoration: none;
 }
 
@@ -263,8 +392,32 @@ body {
   border-bottom-color: var(--brand);
 }
 
+/* ── Scrollbar hide (sliders / reels) ───────────── */
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Marquee ─────────────────────────────────────── */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
 @media (max-width: 768px) {
   .page-hero {
-    padding: 5rem 1rem 3rem;
+    padding: 7rem 1rem 4rem;
   }
 }

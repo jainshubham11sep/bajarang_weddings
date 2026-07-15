@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Wedding Décor & Design Services | Bajranng Weddings',
@@ -19,31 +20,38 @@ export default function DecorDesignPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
-          <Link href="/services" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Services</Link> / Décor & Design
-        </p>
-        <h1>Wedding Décor & Design Services</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Where imagination meets craftsmanship — every element designed and built by our in-house artists</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>
+            <Link href="/services" style={{ color: 'var(--brand-light)', textDecoration: 'none' }}>Services</Link> / Décor & Design
+          </p>
+          <h1>Wedding Décor & Design Services</h1>
+          <div className="section-divider" />
+          <p>Where imagination meets craftsmanship — every element designed and built by our in-house artists</p>
+        </div>
       </div>
 
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-5xl mx-auto">
-          <p className="leading-relaxed text-center max-w-3xl mx-auto mb-12" style={{ color: 'var(--text-muted)' }}>
-            Our décor philosophy is simple: every wedding is a canvas, and we paint it with intention.
-            From a single blooming centrepiece to a 5,000 sq ft mandap hall transformation, every element
-            is conceived, designed, and executed by our in-house team of 30+ designers and 50+ craftsmen.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <Reveal>
+            <p className="leading-relaxed text-center max-w-3xl mx-auto mb-14" style={{ color: 'var(--text-muted)' }}>
+              Our décor philosophy is simple: every wedding is a canvas, and we paint it with intention.
+              From a single blooming centrepiece to a 5,000 sq ft mandap hall transformation, every element
+              is conceived, designed, and executed by our in-house team of 30+ designers and 50+ craftsmen.
+            </p>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" gap={0.06}>
             {offerings.map((o) => (
-              <div key={o.title} className="bg-white p-6 card-hover" style={{ borderTop: '3px solid var(--gold)' }}>
-                <h3 className="font-semibold mb-2" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{o.title}</h3>
-                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{o.desc}</p>
-              </div>
+              <StaggerItem key={o.title}>
+                <div className="modern-card p-6 h-full" style={{ borderTop: '3px solid var(--brand)' }}>
+                  <h3 className="font-semibold mb-2" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}>{o.title}</h3>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{o.desc}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link href="/contact" className="btn-primary">Request a Design Consultation</Link>
+          </Stagger>
+          <div className="mt-14 text-center">
+            <Link href="/contact" className="btn-primary"><span>Request a Design Consultation</span></Link>
           </div>
         </div>
       </section>

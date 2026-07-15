@@ -1,10 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Videos | Bajranng Weddings',
   description: 'Watch wedding highlight films, behind-the-scenes, decor transformation videos, and full wedding films by Bajranng Weddings.',
 };
+
+const galleryPool = [
+  '/images/gallery/IMG_1936.jpeg',
+  '/images/gallery/IMG_1937.jpeg',
+  '/images/gallery/IMG_1938.jpeg',
+  '/images/gallery/IMG_2021.jpeg',
+  '/images/gallery/IMG_1986.jpeg',
+  '/images/gallery/IMG_2008.jpeg',
+];
 
 const categories = [
   {
@@ -43,56 +54,70 @@ export default function VideosPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Watch & Experience</p>
-        <h1>Wedding Videos</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Cinematic stories of love, celebration, and royal grandeur</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>Watch & Experience</p>
+          <h1>Wedding Videos</h1>
+          <div className="section-divider" />
+          <p>Cinematic stories of love, celebration, and royal grandeur</p>
+        </div>
       </div>
 
       {categories.map((cat, idx) => (
-        <section key={cat.id} id={cat.id} className="py-16 px-4"
+        <section key={cat.id} id={cat.id} className="py-20 px-4"
           style={{ background: idx % 2 === 0 ? 'var(--cream)' : 'var(--ivory)' }}>
           <div className="max-w-6xl mx-auto">
-            <div className="mb-8">
-              <p className="text-xs tracking-[0.3em] uppercase mb-2" style={{ color: 'var(--gold)' }}>{cat.videos} Videos</p>
-              <h2 className="section-title text-left mb-2">{cat.label}</h2>
-              <div className="section-divider mx-0 mb-3" />
-              <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{cat.desc}</p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <Reveal>
+              <div className="mb-10">
+                <p className="eyebrow mb-3">{cat.videos} Videos</p>
+                <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: 'var(--ink)', marginBottom: '0.5rem' }}>{cat.label}</h2>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{cat.desc}</p>
+              </div>
+            </Reveal>
+            <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" gap={0.06}>
               {Array.from({ length: Math.min(cat.videos, 3) }, (_, i) => (
-                <div key={i} className="card-hover cursor-pointer group"
-                  style={{ background: 'var(--charcoal)', aspectRatio: '16/9', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all group-hover:scale-110"
-                      style={{ borderColor: 'var(--gold)', background: 'rgba(201,168,76,0.15)' }}>
+                <StaggerItem key={i}>
+                  <div className="modern-card cursor-pointer group overflow-hidden"
+                    style={{ aspectRatio: '16/9', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Image
+                      src={galleryPool[(idx + i) % galleryPool.length]}
+                      alt={`${cat.label} ${i + 1}`}
+                      fill
+                      style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                      className="group-hover:scale-105"
+                    />
+                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(13,11,9,0.4)' }} />
+                    <div className="relative w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all group-hover:scale-110"
+                      style={{ borderColor: 'var(--brand-light)', background: 'rgba(181,66,42,0.2)' }}>
                       <div className="w-0 h-0 ml-1" style={{
                         borderTop: '8px solid transparent',
                         borderBottom: '8px solid transparent',
-                        borderLeft: '14px solid var(--gold)',
+                        borderLeft: '14px solid white',
                       }} />
                     </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-3 text-xs tracking-widest uppercase"
+                      style={{ color: 'rgba(255,255,255,0.85)' }}>
+                      {cat.label} — {String(i + 1).padStart(2, '0')}
+                    </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-3 text-xs tracking-widest uppercase"
-                    style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    {cat.label} — {String(i + 1).padStart(2, '0')}
-                  </div>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
       ))}
 
-      <section className="py-16 px-4 text-center" style={{ background: 'var(--gold)' }}>
-        <h2 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-          Want a Video for Your Wedding?
-        </h2>
-        <p className="text-white/80 mb-6">Our in-house videography team captures every precious moment with cinematic artistry.</p>
-        <Link href="/contact" className="bg-white text-sm tracking-widest uppercase px-8 py-3"
-          style={{ color: 'var(--gold-dark)', fontFamily: 'Georgia, serif' }}>
-          Enquire Now
-        </Link>
+      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--brand)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
+        <Reveal>
+          <div className="relative">
+            <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'white', marginBottom: '1rem' }}>
+              Want a Video for Your Wedding?
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '2rem' }}>Our in-house videography team captures every precious moment with cinematic artistry.</p>
+            <Link href="/contact" className="btn-ghost-light" style={{ background: 'white', color: 'var(--brand-dark)', borderColor: 'white' }}><span>Enquire Now</span></Link>
+          </div>
+        </Reveal>
       </section>
     </>
   );

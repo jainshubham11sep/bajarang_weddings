@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Reveal } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Our Founders | Bajranng Weddings',
@@ -10,14 +11,18 @@ export default function TeamPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>The Visionaries</p>
-        <h1>Our Founders</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>35+ years of crafting India&apos;s most extraordinary weddings</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>The Visionaries</p>
+          <h1>Our Founders</h1>
+          <div className="section-divider" />
+          <p>35+ years of crafting India&apos;s most extraordinary weddings</p>
+        </div>
       </div>
 
       {/* Manmohan Agrawal */}
-      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--cream)' }}>
+        <Reveal>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div className="flex flex-col items-center md:items-start">
             <div className="w-40 h-40 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-6"
@@ -55,10 +60,12 @@ export default function TeamPage() {
             </blockquote>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* Ashutosh Agrawal */}
-      <section className="py-20 px-4" style={{ background: 'var(--ivory)' }}>
+      <section className="py-24 px-4" style={{ background: 'var(--ivory)' }}>
+        <Reveal>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div className="order-2 md:order-1">
             <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
@@ -96,22 +103,25 @@ export default function TeamPage() {
             <div style={{ width: '48px', height: '2px', background: 'var(--brand)', marginBottom: '1.5rem', alignSelf: 'flex-end' }} />
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* In-house team mention */}
-      <section className="py-16 px-4 text-center" style={{ background: 'var(--charcoal)' }}>
-        <div className="max-w-2xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: 'var(--brand-light)' }}>Behind Every Wedding</p>
-          <h2 style={{ fontFamily: 'var(--display-font)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', fontWeight: 300, fontStyle: 'italic', color: 'rgba(253,250,247,0.92)', lineHeight: 1.3, marginBottom: '1rem' }}>
+      <section className="py-20 px-4 text-center relative overflow-hidden" style={{ background: 'var(--charcoal)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(181,66,42,0.16) 0%, transparent 70%)' }} />
+        <Reveal>
+        <div className="max-w-2xl mx-auto relative">
+          <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Behind Every Wedding</p>
+          <h2 className="display-xl" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', color: 'rgba(253,250,247,0.94)', marginBottom: '1.25rem' }}>
             200+ In-house Professionals
           </h2>
-          <div style={{ width: '48px', height: '1px', background: 'var(--brand)', margin: '1rem auto 1.5rem' }} />
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: 1.8, marginBottom: '2.25rem' }}>
             Behind our founders is a 200+ member team of designers, artisans, planners, and production specialists — all
             in-house, all passionate, all dedicated to making your wedding extraordinary.
           </p>
-          <Link href="/contact" className="btn-primary">Plan My Wedding</Link>
+          <Link href="/contact" className="btn-primary"><span>Plan My Wedding</span></Link>
         </div>
+        </Reveal>
       </section>
     </>
   );

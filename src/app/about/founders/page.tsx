@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Reveal } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: "Founder's Note | Bajranng Weddings",
@@ -11,34 +12,37 @@ export default function FoundersPage() {
   return (
     <>
       {/* Hero */}
-      <div className="page-hero" style={{ background: 'linear-gradient(135deg, #1A1A1A 0%, #2D2520 100%)' }}>
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
-          <Link href="/about" style={{ color: 'var(--gold)', textDecoration: 'none' }}>About</Link> / Founder&apos;s Note
-        </p>
-        <h1>Founder&apos;s Note</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Three decades of passion, perfection, and the art of extraordinary celebrations</p>
+      <div className="page-hero">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>
+            <Link href="/about" style={{ color: 'var(--brand-light)', textDecoration: 'none' }}>About</Link> / Founder&apos;s Note
+          </p>
+          <h1>Founder&apos;s Note</h1>
+          <div className="section-divider" />
+          <p>Three decades of passion, perfection, and the art of extraordinary celebrations</p>
+        </div>
       </div>
 
       {/* Instagram CTA */}
       <section className="py-16 px-4" style={{ background: 'var(--ivory)' }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Follow Our Journey</p>
-          <h2 className="section-title mb-2">See Our Work on Instagram</h2>
-          <div className="section-divider mb-8" />
-          <p className="mb-8 leading-relaxed" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-            From behind-the-scenes moments to breathtaking wedding highlights — follow us for a glimpse into the world of Bajranng Weddings.
-          </p>
-          <a
-            href="https://www.instagram.com/bajranngweddings"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{ display: 'inline-block' }}
-          >
-            @bajranngweddings
-          </a>
-        </div>
+        <Reveal>
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Follow Our Journey</p>
+            <h2 className="display-xl" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: 'var(--ink)', marginBottom: '1.25rem' }}>See Our Work on Instagram</h2>
+            <p className="mb-8 leading-relaxed" style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+              From behind-the-scenes moments to breathtaking wedding highlights — follow us for a glimpse into the world of Bajranng Weddings.
+            </p>
+            <a
+              href="https://www.instagram.com/bajranngweddings"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              <span>@bajranngweddings</span>
+            </a>
+          </div>
+        </Reveal>
       </section>
 
       {/* Manmohan Agrawal */}
@@ -56,7 +60,7 @@ export default function FoundersPage() {
                   <div className="text-center">
                     <div
                       className="text-7xl font-bold leading-none"
-                      style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--gold)' }}
+                      style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--gold)' }}
                     >
                       MA
                     </div>
@@ -78,7 +82,7 @@ export default function FoundersPage() {
                 <div className="p-6 bg-white" style={{ borderLeft: '3px solid var(--gold)' }}>
                   <h3
                     className="text-xl font-bold mb-1 leading-tight"
-                    style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--charcoal)' }}
+                    style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}
                   >
                     Manmohan Agrawal
                   </h3>
@@ -87,7 +91,7 @@ export default function FoundersPage() {
                   </p>
                   <div className="space-y-2 text-xs" style={{ color: 'var(--text-muted)' }}>
                     <p>✦ &nbsp;35+ Years in Events</p>
-                    <p>✦ &nbsp;500+ Weddings Curated</p>
+                    <p>✦ &nbsp;2000+ Weddings Curated</p>
                     <p>✦ &nbsp;Pan-India Presence</p>
                   </div>
                 </div>
@@ -101,7 +105,7 @@ export default function FoundersPage() {
               </p>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-2 leading-tight"
-                style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--charcoal)' }}
+                style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}
               >
                 Manmohan Agrawal
               </h2>
@@ -134,13 +138,13 @@ export default function FoundersPage() {
               <div className="mt-10 p-7 relative" style={{ background: 'var(--ivory)', borderLeft: '4px solid var(--gold)' }}>
                 <div
                   className="absolute -top-4 left-6 text-6xl leading-none opacity-20"
-                  style={{ color: 'var(--gold)', fontFamily: 'Georgia, serif' }}
+                  style={{ color: 'var(--gold)', fontFamily: 'var(--display-font)' }}
                 >
                   &ldquo;
                 </div>
                 <p
                   className="text-lg italic leading-relaxed"
-                  style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}
+                  style={{ fontFamily: 'var(--display-font)', color: 'var(--charcoal)' }}
                 >
                   Every celebration should be a reflection of individuality, emotion, and excellence.
                 </p>
@@ -173,7 +177,7 @@ export default function FoundersPage() {
               </p>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-2 leading-tight"
-                style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--charcoal)' }}
+                style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}
               >
                 Ashutosh Agrawal
               </h2>
@@ -206,13 +210,13 @@ export default function FoundersPage() {
               <div className="mt-10 p-7 relative" style={{ background: 'white', borderLeft: '4px solid var(--gold)' }}>
                 <div
                   className="absolute -top-4 left-6 text-6xl leading-none opacity-20"
-                  style={{ color: 'var(--gold)', fontFamily: 'Georgia, serif' }}
+                  style={{ color: 'var(--gold)', fontFamily: 'var(--display-font)' }}
                 >
                   &ldquo;
                 </div>
                 <p
                   className="text-lg italic leading-relaxed"
-                  style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}
+                  style={{ fontFamily: 'var(--display-font)', color: 'var(--charcoal)' }}
                 >
                   Timeless traditions, contemporary aesthetics — creating celebrations that are
                   visually stunning, meaningful, and memorable.
@@ -233,7 +237,7 @@ export default function FoundersPage() {
                   <div className="text-center">
                     <div
                       className="text-7xl font-bold leading-none"
-                      style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--gold)' }}
+                      style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--gold)' }}
                     >
                       AA
                     </div>
@@ -254,7 +258,7 @@ export default function FoundersPage() {
                 <div className="p-6 bg-white" style={{ borderLeft: '3px solid var(--gold)' }}>
                   <h3
                     className="text-xl font-bold mb-1 leading-tight"
-                    style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: 'var(--charcoal)' }}
+                    style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}
                   >
                     Ashutosh Agrawal
                   </h3>
@@ -282,7 +286,7 @@ export default function FoundersPage() {
           <div className="text-4xl mb-6" style={{ color: 'var(--gold)' }}>✦</div>
           <p
             className="text-xl md:text-2xl italic leading-relaxed mb-6"
-            style={{ fontFamily: 'Georgia, serif', color: 'rgba(255,255,255,0.85)' }}
+            style={{ fontFamily: 'var(--display-font)', color: 'rgba(255,255,255,0.85)' }}
           >
             Together, Manmohan and Ashutosh Agrawal have built more than a wedding company —
             they have created a legacy of love, artistry, and extraordinary moments that families
@@ -293,14 +297,14 @@ export default function FoundersPage() {
             <Link
               href="/contact"
               className="bg-white text-sm tracking-widest uppercase px-8 py-3 transition-all hover:bg-gray-100"
-              style={{ color: 'var(--gold-dark)', fontFamily: 'Georgia, serif' }}
+              style={{ color: 'var(--gold-dark)', fontFamily: 'var(--display-font)' }}
             >
               Begin Your Journey
             </Link>
             <Link
               href="/about"
               className="border border-white text-white text-sm tracking-widest uppercase px-8 py-3 transition-all hover:bg-white/10"
-              style={{ fontFamily: 'Georgia, serif' }}
+              style={{ fontFamily: 'var(--display-font)' }}
             >
               About Bajranng Weddings
             </Link>

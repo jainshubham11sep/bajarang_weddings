@@ -1,44 +1,64 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { Reveal } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Destination Weddings Album | Bajranng Weddings',
   description: 'Destination wedding photography across Udaipur, Jaipur, Jodhpur, Jaisalmer, and more.',
 };
 
-const placeholders = Array.from({ length: 12 }, (_, i) => ({ id: i + 1 }));
+const photos = [
+  '/images/gallery/IMG_1937.jpeg',
+  '/images/gallery/IMG_1936.jpeg',
+  '/images/gallery/IMG_1938.jpeg',
+  '/images/gallery/IMG_1939.jpeg',
+  '/images/gallery/IMG_2009.jpeg',
+  '/images/gallery/IMG_2010.jpeg',
+  '/images/gallery/IMG_2011.jpeg',
+  '/images/gallery/IMG_2012.jpeg',
+  '/images/gallery/IMG_1972.jpeg',
+  '/images/gallery/IMG_1973.jpeg',
+  '/images/gallery/IMG_1974.jpeg',
+  '/images/gallery/IMG_1930.jpeg',
+];
 
 export default function DestinationWeddingsPage() {
   return (
     <>
       <div className="page-hero">
-        <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
-          <Link href="/albums" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Albums</Link> / Destination Weddings
-        </p>
-        <h1>Destination Weddings</h1>
-        <div className="section-divider mt-4 mb-4" />
-        <p>Breathtaking celebrations set against the lakes, deserts, and forts of Rajasthan</p>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(181,66,42,0.2) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="label mb-4" style={{ color: 'var(--brand-light)' }}>
+            <Link href="/albums" style={{ color: 'var(--brand-light)', textDecoration: 'none' }}>Albums</Link> / Destination Weddings
+          </p>
+          <h1>Destination Weddings</h1>
+          <div className="section-divider" />
+          <p>Breathtaking celebrations set against the lakes, deserts, and forts of Rajasthan</p>
+        </div>
       </div>
-      <section className="py-16 px-4" style={{ background: 'var(--cream)' }}>
+      <section className="py-20 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="gallery-grid">
-            {placeholders.map((p) => (
-              <div key={p.id} className="gallery-item card-hover group cursor-pointer">
-                <div className="w-full h-full flex items-center justify-center"
-                  style={{ background: `hsl(${210 + p.id * 6}, 40%, ${10 + p.id * 2}%)` }}>
-                  <div className="text-center text-white/60">
-                    <div className="text-3xl mb-2" style={{ color: 'var(--gold)' }}>✦</div>
-                    <div className="text-xs tracking-widest uppercase">Destination Wedding {p.id}</div>
+          <Reveal>
+            <div className="gallery-grid">
+              {photos.map((src, i) => (
+                <div key={i} className="gallery-item card-hover group cursor-pointer">
+                  <Image
+                    src={src}
+                    alt={`Destination Wedding ${i + 1}`}
+                    fill
+                    style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                    className="group-hover:scale-105"
+                  />
+                  <div className="gallery-overlay">
+                    <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--gold-light)' }}>View Photo</span>
                   </div>
                 </div>
-                <div className="gallery-overlay">
-                  <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--gold-light)' }}>View Photo</span>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
           <div className="mt-12 text-center">
-            <Link href="/contact" className="btn-primary">Plan My Destination Wedding</Link>
+            <Link href="/contact" className="btn-primary"><span>Plan My Destination Wedding</span></Link>
           </div>
         </div>
       </section>
