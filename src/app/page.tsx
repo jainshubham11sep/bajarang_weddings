@@ -27,12 +27,12 @@ const albums = [
 ];
 
 const venues = [
-  { name: 'Udaipur', tagline: 'City of Lakes', href: '/venues/udaipur' },
-  { name: 'Jaipur', tagline: 'Pink City', href: '/venues/jaipur' },
-  { name: 'Jodhpur', tagline: 'Blue City', href: '/venues/jodhpur' },
-  { name: 'Jaisalmer', tagline: 'Golden City', href: '/venues/jaisalmer' },
-  { name: 'Pushkar', tagline: 'Sacred Oasis', href: '/venues/pushkar' },
-  { name: 'Ranthambhor', tagline: 'Wilderness Royale', href: '/venues/ranthambhor' },
+  { name: 'Udaipur', tagline: 'City of Lakes', href: '/venues/udaipur', img: '/images/venues/udaipur.jpg' },
+  { name: 'Jaipur', tagline: 'Pink City', href: '/venues/jaipur', img: '/images/venues/jaipur.jpg' },
+  { name: 'Jodhpur', tagline: 'Blue City', href: '/venues/jodhpur', img: '/images/venues/jodhpur.jpg' },
+  { name: 'Jaisalmer', tagline: 'Golden City', href: '/venues/jaisalmer', img: '/images/venues/jaisalmer.jpg' },
+  { name: 'Pushkar', tagline: 'Sacred Oasis', href: '/venues/pushkar', img: '/images/venues/pushkar.jpg' },
+  { name: 'Ranthambhor', tagline: 'Wilderness Royale', href: '/venues/ranthambhor', img: '/images/venues/ranthambore.jpg' },
 ];
 
 const testimonials = [
@@ -322,9 +322,27 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-px" style={{ background: 'var(--stone)' }}>
             {venues.map((v) => (
-              <Link key={v.name} href={v.href} style={{ background: 'white', padding: '3rem 2rem', textAlign: 'center', display: 'block', textDecoration: 'none' }} className="card-hover venue-card-dark group">
-                <p style={{ fontFamily: 'var(--display-font)', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontStyle: 'italic', fontWeight: 300, color: 'var(--ink)', lineHeight: 1, marginBottom: '0.5rem' }}>{v.name}</p>
-                <p style={{ fontFamily: 'var(--body-font)', fontSize: '0.58rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{v.tagline}</p>
+              <Link
+                key={v.name}
+                href={v.href}
+                style={{ position: 'relative', aspectRatio: '4/3', display: 'block', overflow: 'hidden', textDecoration: 'none' }}
+                className="card-hover group"
+              >
+                <Image
+                  src={v.img}
+                  alt={`${v.name} wedding venue`}
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center', transition: 'transform 0.6s ease' }}
+                  className="group-hover:scale-105"
+                />
+                {/* Gradient overlay — heavier at bottom */}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,11,9,0.88) 0%, rgba(13,11,9,0.35) 55%, rgba(13,11,9,0.1) 100%)' }} />
+                {/* Brand accent line on hover */}
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: 'var(--brand)', transform: 'scaleX(0)', transition: 'transform 0.3s ease', transformOrigin: 'left' }} className="group-hover:scale-x-100" />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.5rem 1.75rem' }}>
+                  <p style={{ fontFamily: 'var(--display-font)', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontStyle: 'italic', fontWeight: 400, color: 'rgba(253,250,247,0.95)', lineHeight: 1, marginBottom: '0.4rem' }}>{v.name}</p>
+                  <p style={{ fontFamily: 'var(--body-font)', fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(181,66,42,0.85)' }}>{v.tagline}</p>
+                </div>
               </Link>
             ))}
           </div>

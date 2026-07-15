@@ -12,8 +12,8 @@ const whyChooseUs = [
     desc: 'Unlike most planners who outsource execution, we have our own 200+ member production team. This means complete quality control, faster turnarounds, and zero compromise.',
   },
   {
-    title: 'Decade of Royal Expertise',
-    desc: 'Over 15 years of crafting luxury weddings across Rajasthan\'s most iconic venues. We know every palace, every fort, every lake — and how to make them extraordinary.',
+    title: '35 Years of Royal Expertise',
+    desc: 'Since 1991, we have been crafting luxury weddings across Rajasthan\'s most iconic venues. We know every palace, every fort, every lake — and how to make them extraordinary.',
   },
   {
     title: 'Bespoke Every Time',
@@ -25,7 +25,7 @@ const whyChooseUs = [
   },
   {
     title: 'Pan-India Network',
-    desc: 'Over 1,000 trusted vendor relationships built over 15 years — from master craftsmen to celebrity performers.',
+    desc: 'Over 1,000 trusted vendor relationships built across 35 years — from master craftsmen to celebrity performers.',
   },
   {
     title: 'Award-Winning Designs',
@@ -34,12 +34,12 @@ const whyChooseUs = [
 ];
 
 const milestones = [
-  { year: '2009', event: 'Founded in Jaipur with a vision to redefine Indian weddings' },
-  { year: '2012', event: 'First 100-wedding milestone; launched in-house production unit' },
-  { year: '2015', event: 'Expanded to 6 destinations across Rajasthan' },
-  { year: '2018', event: 'Featured in Vogue India & Harper\'s Bazaar as top wedding planner' },
-  { year: '2021', event: 'Crossed 300 weddings; launched international destination weddings' },
-  { year: '2024', event: '500+ weddings, 200+ team members, and counting...' },
+  { year: '1991', event: 'Founded in Kota, Rajasthan by Manmohan Agrawal — with a singular vision to craft extraordinary celebrations' },
+  { year: '1997', event: 'Expanded to Jaipur; first major palace wedding at Jai Mahal Palace — the beginning of royal legacy' },
+  { year: '2003', event: 'Crossed 100-wedding milestone; launched dedicated in-house decor & production division' },
+  { year: '2010', event: 'Pan-Rajasthan presence across 6 destinations; first international destination wedding' },
+  { year: '2017', event: 'Global celebrations launched for NRI & international couples; reach extended worldwide' },
+  { year: '2024', event: '500+ weddings, 200+ team members, and 35 years of creating timeless memories — still counting' },
 ];
 
 export default function AboutPage() {
@@ -67,18 +67,18 @@ export default function AboutPage() {
             <h2 className="section-title text-left mb-4">Born from a Passion for Perfection</h2>
             <div className="section-divider mx-0 mb-6" />
             <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
-              Bajranng Weddings was founded in 2009 by a group of passionate event professionals who shared one belief:
-              every Indian wedding deserves to be a royal celebration. What began as a small boutique operation in
-              Jaipur grew into one of India&apos;s most respected luxury wedding companies.
+              Bajranng Weddings was founded in 1991 by Manmohan Agrawal in the heart of Kota, Rajasthan — driven by
+              one unwavering belief: every Indian wedding deserves to be a royal celebration. What began as a passionate
+              one-man vision has grown into one of India&apos;s most respected luxury wedding companies.
             </p>
             <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
-              Our founders drew inspiration from Rajasthan&apos;s rich royal heritage — its magnificent palaces, vibrant
-              culture, and traditions of grand hospitality. They built a company that didn&apos;t just plan weddings,
-              but created immersive experiences that families would treasure for generations.
+              Drawing deeply from Rajasthan&apos;s rich royal heritage — its magnificent palaces, vibrant culture, and
+              traditions of grand hospitality — we built a company that doesn&apos;t just plan weddings, but crafts
+              immersive experiences that families treasure for generations.
             </p>
             <p className="leading-relaxed mb-8" style={{ color: 'var(--text-muted)' }}>
-              Today, with over 500 weddings executed and a team of 200+ creative professionals, we remain as dedicated
-              to that original vision as ever: making every wedding a timeless masterpiece.
+              Today, 35 years on, with over 500 weddings executed and a team of 200+ creative professionals, we remain
+              as dedicated to that original vision as ever: making every wedding a timeless masterpiece.
             </p>
             <div className="flex gap-4 flex-wrap">
               <Link href="/contact" className="btn-primary">Start Your Journey</Link>
@@ -89,7 +89,7 @@ export default function AboutPage() {
             {milestones.map((m) => (
               <div key={m.year} className="flex gap-5 items-start">
                 <div className="flex-shrink-0 w-16 text-right">
-                  <span className="font-bold text-sm" style={{ color: 'var(--gold)', fontFamily: 'Georgia, serif' }}>{m.year}</span>
+                  <span className="font-bold text-sm" style={{ color: 'var(--gold)', fontFamily: 'var(--display-font)' }}>{m.year}</span>
                 </div>
                 <div className="flex-shrink-0 flex flex-col items-center pt-1">
                   <div className="w-3 h-3 rounded-full" style={{ background: 'var(--gold)' }} />
@@ -112,7 +112,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyChooseUs.map((item) => (
               <div key={item.title} className="bg-white p-7 card-hover" style={{ borderTop: '3px solid var(--gold)' }}>
-                <div className="text-lg font-semibold mb-3" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{item.title}</div>
+                <div className="text-lg font-semibold mb-3" style={{ fontFamily: 'var(--display-font)', color: 'var(--charcoal)' }}>{item.title}</div>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{item.desc}</p>
               </div>
             ))}
@@ -139,7 +139,7 @@ export default function AboutPage() {
               { num: '100%', label: 'Quality Controlled' },
             ].map((s) => (
               <div key={s.label} className="p-5 border" style={{ borderColor: 'rgba(201,168,76,0.4)' }}>
-                <div className="text-3xl font-bold mb-1" style={{ color: 'var(--gold-light)', fontFamily: 'Georgia, serif' }}>{s.num}</div>
+                <div className="text-3xl font-bold mb-1" style={{ color: 'var(--gold-light)', fontFamily: 'var(--display-font)' }}>{s.num}</div>
                 <div className="text-xs tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.55)' }}>{s.label}</div>
               </div>
             ))}
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full text-white text-sm"
                   style={{ background: 'var(--gold)' }}>✦</div>
                 <div>
-                  <h3 className="font-semibold mb-2" style={{ fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}>{e.title}</h3>
+                  <h3 className="font-semibold mb-2" style={{ fontFamily: 'var(--display-font)', color: 'var(--charcoal)' }}>{e.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{e.desc}</p>
                 </div>
               </div>
@@ -188,16 +188,16 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="py-16 px-4 text-center" style={{ background: 'var(--gold)' }}>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic' }}>
           Let&apos;s Create Something Extraordinary Together
         </h2>
         <div className="flex flex-wrap gap-4 justify-center mt-6">
           <Link href="/contact" className="bg-white text-sm tracking-widest uppercase px-8 py-3 transition-all hover:bg-gray-100"
-            style={{ color: 'var(--gold-dark)', fontFamily: 'Georgia, serif' }}>
+            style={{ color: 'var(--gold-dark)', fontFamily: 'var(--display-font)' }}>
             Contact Us
           </Link>
           <Link href="/team" className="border border-white text-white text-sm tracking-widest uppercase px-8 py-3 transition-all hover:bg-white/10"
-            style={{ fontFamily: 'Georgia, serif' }}>
+            style={{ fontFamily: 'var(--display-font)' }}>
             Meet Our Team
           </Link>
         </div>
