@@ -23,9 +23,11 @@ export default function ContactPage() {
     weddingDate: '',
     venue: '',
     guests: '',
+    service: '',
     budget: '',
     message: '',
   });
+  const todayStr = new Date().toISOString().split('T')[0];
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -100,9 +102,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs tracking-widest uppercase mb-1.5" style={{ color: 'var(--charcoal)' }}>Tentative Wedding Date</label>
+                    <label className="block text-xs tracking-widest uppercase mb-1.5" style={{ color: 'var(--charcoal)' }}>Tentative Event Date</label>
                     <input
                       type="date"
+                      min={todayStr}
                       value={form.weddingDate}
                       onChange={(e) => setForm({ ...form, weddingDate: e.target.value })}
                       className="w-full border px-4 py-3 text-sm bg-white outline-none focus:border-yellow-600 transition-colors"
@@ -142,19 +145,46 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs tracking-widest uppercase mb-1.5" style={{ color: 'var(--charcoal)' }}>Budget Range</label>
-                  <select
-                    value={form.budget}
-                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                    className="w-full border px-4 py-3 text-sm bg-white outline-none focus:border-yellow-600 transition-colors"
-                    style={{ borderColor: 'var(--ivory)', fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}
-                  >
-                    <option value="">Select budget range</option>
-                    {['₹25L – ₹50L', '₹50L – ₹1Cr', '₹1Cr – ₹2Cr', '₹2Cr – ₹5Cr', 'Above ₹5Cr'].map(b => (
-                      <option key={b} value={b}>{b}</option>
-                    ))}
-                  </select>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs tracking-widest uppercase mb-1.5" style={{ color: 'var(--charcoal)' }}>Service Interested In</label>
+                    <select
+                      value={form.service}
+                      onChange={(e) => setForm({ ...form, service: e.target.value })}
+                      className="w-full border px-4 py-3 text-sm bg-white outline-none focus:border-yellow-600 transition-colors"
+                      style={{ borderColor: 'var(--ivory)', fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}
+                    >
+                      <option value="">Select a service</option>
+                      {[
+                        'Destination Wedding Planning',
+                        'Wedding Décor & Design',
+                        'Event Flow Management',
+                        'Venue Selection',
+                        'Entertainment Activities',
+                        'Guest Management',
+                        'Invitations & Communication',
+                        'Transport & Logistics',
+                        'Vendor Management',
+                        'Other',
+                      ].map(s => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs tracking-widest uppercase mb-1.5" style={{ color: 'var(--charcoal)' }}>Budget Range</label>
+                    <select
+                      value={form.budget}
+                      onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                      className="w-full border px-4 py-3 text-sm bg-white outline-none focus:border-yellow-600 transition-colors"
+                      style={{ borderColor: 'var(--ivory)', fontFamily: 'Georgia, serif', color: 'var(--charcoal)' }}
+                    >
+                      <option value="">Select budget range</option>
+                      {['₹25L – ₹50L', '₹50L – ₹1Cr', '₹1Cr – ₹2Cr', '₹2Cr – ₹5Cr', 'Above ₹5Cr'].map(b => (
+                        <option key={b} value={b}>{b}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
                 <div>
@@ -185,13 +215,12 @@ export default function ContactPage() {
 
             {/* Quick contact */}
             <div className="grid grid-cols-2 gap-4 mb-8">
-              <a href="tel:+918224894743"
-                className="modern-card p-5 text-center block no-underline">
+              <div className="modern-card p-5 text-center">
                 <div className="text-2xl mb-2">📞</div>
                 <div className="text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--brand)' }}>Call Us</div>
-                <div className="text-xs font-medium" style={{ color: 'var(--charcoal)' }}>+91 82248 94743</div>
-                <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>+91 96365 48645</div>
-              </a>
+                <a href="tel:+918224894743" className="block text-xs font-medium hover:underline" style={{ color: 'var(--charcoal)' }}>+91 82248 94743</a>
+                <a href="tel:+919636548645" className="block text-xs mt-0.5 hover:underline" style={{ color: 'var(--text-muted)' }}>+91 96365 48645</a>
+              </div>
               <a href="https://wa.me/918224894743"
                 target="_blank" rel="noopener noreferrer"
                 className="modern-card p-5 text-center block no-underline">

@@ -24,13 +24,18 @@ export default function AlbumsGalleryClient() {
 
       <section className="py-12 md:py-24 px-4" style={{ background: 'var(--cream)' }}>
         <div className="max-w-6xl mx-auto">
+          <Reveal>
+            <p className="text-sm text-center mb-10" style={{ color: 'var(--text-muted)', maxWidth: '560px', margin: '0 auto 3rem' }}>
+              Every photograph here is from a real Bajranng celebration — click any image to see it in full.
+            </p>
+          </Reveal>
           <Stagger className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" gap={0.06}>
             {weddingGalleryPhotos.map((p, i) => (
-              <StaggerItem key={p.src}>
+              <StaggerItem key={p.src} className={i === 1 ? 'md:col-span-2' : undefined}>
                 <button
                   onClick={() => setLightbox(i)}
-                  className="modern-card group relative block w-full overflow-hidden"
-                  style={{ aspectRatio: '3/4', cursor: 'zoom-in' }}
+                  className={`modern-card group relative block w-full overflow-hidden ${i === 1 ? 'aspect-square md:aspect-[2/1]' : 'aspect-square'}`}
+                  style={{ cursor: 'zoom-in' }}
                 >
                   <Image
                     src={p.src}

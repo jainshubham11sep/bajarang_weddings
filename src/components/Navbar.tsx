@@ -30,17 +30,7 @@ const navItems = [
       { label: 'Reception Decor', href: '/albums/reception-decor' },
     ],
   },
-  {
-    label: 'Videos',
-    href: '/videos',
-    children: [
-      { label: 'Wedding Highlights', href: '/videos#highlights' },
-      { label: 'Behind The Scenes', href: '/videos#bts' },
-      { label: 'Decor Transformations', href: '/videos#decor' },
-      { label: 'Client Experiences', href: '/videos#experiences' },
-      { label: 'Full Wedding Films', href: '/videos#films' },
-    ],
-  },
+  { label: 'Wedding Reels', href: '/videos' },
   {
     label: 'Services',
     href: '/services',

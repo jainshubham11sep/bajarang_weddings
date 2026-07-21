@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Reveal, Stagger, StaggerItem } from '@/components/Reveal';
 
@@ -59,12 +58,6 @@ const testimonials = [
   },
 ];
 
-const videoTestimonials = [
-  { name: 'The Mehta Wedding', venue: 'Udaipur', duration: '3:45', img: '/images/gallery/IMG_1936.jpeg' },
-  { name: 'The Singhania Wedding', venue: 'Jaipur', duration: '4:12', img: '/images/gallery/IMG_1938.jpeg' },
-  { name: 'The Kapoor Wedding', venue: 'Jodhpur', duration: '3:28', img: '/images/gallery/IMG_1937.jpeg' },
-];
-
 export default function TestimonialsPage() {
   return (
     <>
@@ -109,46 +102,6 @@ export default function TestimonialsPage() {
                       <span style={{ color: 'var(--text-muted)' }}>·</span>
                       <span style={{ color: 'var(--text-muted)' }}>{t.date}</span>
                     </div>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      {/* Video Testimonials */}
-      <section className="py-12 md:py-24 px-4" style={{ background: 'var(--ivory)' }}>
-        <div className="max-w-5xl mx-auto">
-          <Reveal>
-            <div className="text-center mb-14">
-              <p className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Video Testimonials</p>
-              <h2 className="display-xl" style={{ fontSize: 'clamp(2rem, 4vw, 2.9rem)', color: 'var(--ink)', marginBottom: '0.75rem' }}>Watch Their Stories</h2>
-            </div>
-          </Reveal>
-          <Stagger className="grid md:grid-cols-3 gap-6" gap={0.08}>
-            {videoTestimonials.map((v) => (
-              <StaggerItem key={v.name}>
-                <div className="modern-card overflow-hidden cursor-pointer group">
-                  <div className="relative flex items-center justify-center" style={{ aspectRatio: '16/9' }}>
-                    <Image src={v.img} alt={v.name} fill style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }} className="group-hover:scale-105" />
-                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(13,11,9,0.35)' }} />
-                    <div className="relative w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all group-hover:scale-110"
-                      style={{ borderColor: 'var(--brand-light)', background: 'rgba(181,66,42,0.2)' }}>
-                      <div className="w-0 h-0 ml-1" style={{
-                        borderTop: '8px solid transparent',
-                        borderBottom: '8px solid transparent',
-                        borderLeft: '14px solid white',
-                      }} />
-                    </div>
-                    <div className="absolute bottom-2 right-2 text-xs px-2 py-0.5"
-                      style={{ background: 'rgba(0,0,0,0.6)', color: 'rgba(255,255,255,0.85)' }}>
-                      {v.duration}
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="font-semibold text-sm mb-0.5" style={{ fontFamily: 'var(--display-font)', fontStyle: 'italic', color: 'var(--charcoal)' }}>{v.name}</div>
-                    <div className="text-xs tracking-widest uppercase" style={{ color: 'var(--brand)', fontWeight: 600 }}>{v.venue}</div>
                   </div>
                 </div>
               </StaggerItem>
